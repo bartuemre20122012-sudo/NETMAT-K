@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetMatik - LGS Hazırlık & Rehberlik Portalı</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .ders-grid-container {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+            gap: 20px !important;
+            align-items: start !important;
+            margin-bottom: 3rem !important;
+        }
+
+        .ders-kart-fix {
+            background: rgba(30, 41, 59, 0.95) !important;
+            border-radius: 16px !important;
+            padding: 20px !important;
+            height: auto !important;
+            min-height: initial !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+            transition: transform 0.2s ease !important;
+        }
+
+        .ders-link {
+            color: #cbd5e1 !important;
+            text-decoration: none !important;
+            padding: 10px 14px !important;
+            background: rgba(255,255,255,0.05) !important;
+            border-radius: 8px !important;
+            font-size: 0.92rem !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            border: 1px solid rgba(255,255,255,0.08) !important;
+            transition: all 0.2s ease !important;
+        }
+        .ders-link:hover {
+            background: rgba(56, 189, 248, 0.2) !important;
+            color: #ffffff !important;
+            border-color: rgba(56, 189, 248, 0.4) !important;
+        }
+
+        .hero-btn {
+            padding: 11px 22px;
+            border-radius: 12px;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        .hero-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVİGASYON BARI -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="İndex.html">
+                <img src="./assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" style="height: 48px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="İndex.html" class="active"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="koc/akilli-koc.html"><i class="fa-solid fa-robot"></i> Akıllı Koç</a>
+            <a href="javascript:void(0)" onclick="openKonuTakipAlert()"><i class="fa-solid fa-list-check"></i> Konu Takip</a>
+            <a href="lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+            <a href="javascript:void(0)" onclick="openHakkimda()"><i class="fa-solid fa-user-graduate"></i> Hakkımda</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <!-- HERO KARŞILAMA BÖLÜMÜ -->
+        <section style="text-align: center; margin: 1.5rem 0 2.5rem 0; padding: 2.5rem 1.5rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.85)); border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap;">
+                <span style="background: rgba(15, 23, 42, 0.9); color: #f8fafc; padding: 6px 16px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; border: 1px solid rgba(255, 255, 255, 0.2); display: inline-flex; align-items: center; gap: 8px;">
+                    <img src="./assets/meblogo.png" alt="MEB Logo" style="height: 24px; width: auto;">
+                    MEB Müfredatı ile Uyumlu
+                </span>
+                <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 0.82rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-rocket"></i> LGS Derece Portalı
+                </span>
+            </div>
+
+            <h1 style="font-size: 2.3rem; font-weight: 800; color: #f8fafc; margin: 10px 0;">
+                NetMatik LGS Hazırlık Portalına Hoş Geldin!
+            </h1>
+            <p style="color: #94a3b8; font-size: 1.05rem; max-width: 720px; margin: 0 auto 1.8rem auto; line-height: 1.6;">
+                6 LGS dersinin tüm ünite özetleri, akıllı koçluk analizi, soru arama motoru ve MEB net hesaplama aracı tek çatı altında!
+            </p>
+            
+            <div style="text-align: center; margin-top: 25px;">
+  
+  <a href="koc/akilli-koc.html" style="text-decoration: none;">
+    <button type="button" style="background-color: #0ea5e9; color: #ffffff; padding: 12px 24px; border: none; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer; margin-right: 10px;">
+      Akıllı LGS Koçu
+    </button>
+  </a>
+
+  <a href="#hesapla" style="text-decoration: none;">
+    <button type="button" style="background-color: #131f37; color: #ffffff; border: 1px solid #1e2e4a; padding: 12px 24px; border-radius: 10px; font-weight: bold; font-size: 15px; cursor: pointer;">
+      Net ve Puan Hesapla
+    </button>
+  </a>
+  <a href="indir.html"><i class="fas fa-download"></i> Uygulamayı İndir (v1.2)</a>
+
+</div>
+        </section>
+
+        <!-- DERS KARTLARI BAŞLIĞI -->
+        <h2 style="color: #f8fafc; font-size: 1.7rem; font-weight: 800; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-layer-group" style="color: #38bdf8;"></i> Tüm LGS Ders Notları ve Üniteler
+        </h2>
+
+        <!-- 6 LGS DERS KARTI -->
+        <div class="ders-grid-container">
+            
+            <!-- 1. DİN KÜLTÜRÜ (dersler/DİN/) -->
+            <div class="ders-kart-fix" style="border: 1px solid rgba(239, 68, 68, 0.4); border-top: 5px solid #ef4444;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="width: 46px; height: 46px; background: rgba(239, 68, 68, 0.2); color: #ef4444; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.25rem;">Din Kültürü</h3>
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Kader, Sureler & Kıssalar</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleAcc('din_konular')" style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #ef4444; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer;">
+                    <span><i class="fa-solid fa-book-bookmark"></i> Konuları Göster</span>
+                    <i class="fa-solid fa-chevron-down" id="din_konular_icon"></i>
+                </button>
+
+                <div id="din_konular" style="display: none; flex-direction: column; gap: 8px; margin-top: 12px;">
+                    <a href="dersler/DİN/kader-ve-kaza.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #ef4444;"></i> Kader ve Kaza İnancı</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <!-- 2. FEN BİLİMLERİ (dersler/FEN/) -->
+            <div class="ders-kart-fix" style="border: 1px solid rgba(34, 197, 94, 0.4); border-top: 5px solid #22c55e;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="width: 46px; height: 46px; background: rgba(34, 197, 94, 0.2); color: #22c55e; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.25rem;">Fen Bilimleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Dünya, DNA & Fizik</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleAcc('fen_konular')" style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.3); color: #22c55e; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer;">
+                    <span><i class="fa-solid fa-book-bookmark"></i> Konuları Göster</span>
+                    <i class="fa-solid fa-chevron-down" id="fen_konular_icon"></i>
+                </button>
+
+                <div id="fen_konular" style="display: none; flex-direction: column; gap: 8px; margin-top: 12px;">
+                    <a href="dersler/FEN/mevsimler-ve-iklim.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #22c55e;"></i> Mevsimler ve İklim</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/FEN/dna-ve-genetik-kod.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #22c55e;"></i> DNA ve Genetik Kod</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <!-- 3. İNGİLİZCE (dersler/İNG/) -->
+            <div class="ders-kart-fix" style="border: 1px solid rgba(168, 85, 247, 0.4); border-top: 5px solid #a855f7;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="width: 46px; height: 46px; background: rgba(168, 85, 247, 0.2); color: #a855f7; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.25rem;">İngilizce</h3>
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Vocabulary & Grammar</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleAcc('ing_konular')" style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); color: #a855f7; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer;">
+                    <span><i class="fa-solid fa-book-bookmark"></i> Konuları Göster</span>
+                    <i class="fa-solid fa-chevron-down" id="ing_konular_icon"></i>
+                </button>
+
+                <div id="ing_konular" style="display: none; flex-direction: column; gap: 8px; margin-top: 12px;">
+                    <a href="dersler/İNG/friendship.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #a855f7;"></i> Unit 1: Friendship</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/İNG/teen-life.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #a855f7;"></i> Unit 2: Teen Life</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <!-- 4. İNKILAP TARİHİ (dersler/İNKİLAP/) -->
+            <div class="ders-kart-fix" style="border: 1px solid rgba(245, 158, 11, 0.4); border-top: 5px solid #f59e0b;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="width: 46px; height: 46px; background: rgba(245, 158, 11, 0.2); color: #f59e0b; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.25rem;">İnkılap Tarihi</h3>
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Milli Mücadele & Atatürk</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleAcc('ink_konular')" style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer;">
+                    <span><i class="fa-solid fa-book-bookmark"></i> Konuları Göster</span>
+                    <i class="fa-solid fa-chevron-down" id="ink_konular_icon"></i>
+                </button>
+
+                <div id="ink_konular" style="display: none; flex-direction: column; gap: 8px; margin-top: 12px;">
+                    <a href="dersler/İNKİLAP/bir-kahraman-doguyor.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #f59e0b;"></i> Bir Kahraman Doğuyor</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <!-- 5. MATEMATİK (dersler/matematik/) -->
+            <div class="ders-kart-fix" style="border: 1px solid rgba(56, 189, 248, 0.4); border-top: 5px solid #38bdf8;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="width: 46px; height: 46px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.25rem;">Matematik</h3>
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Mantık, Cebir & Geometri</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleAcc('mat_konular')" style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer;">
+                    <span><i class="fa-solid fa-book-bookmark"></i> Konuları Göster (12 Ünite)</span>
+                    <i class="fa-solid fa-chevron-down" id="mat_konular_icon"></i>
+                </button>
+
+                <div id="mat_konular" style="display: none; flex-direction: column; gap: 8px; margin-top: 12px;">
+                    <a href="dersler/matematik/carpanlar-katlar.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Çarpanlar ve Katlar</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/uslu-ifadeler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Üslü İfadeler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/karekoklu-ifadeler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Kareköklü İfadeler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/veri-isleme.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Veri İşleme</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/olasilik.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Olasılık</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/cebirsel-ifadeler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Cebirsel İfadeler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/dogrusal-denklemler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Doğrusal Denklemler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/esitsizlikler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Eşitsizlikler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/ucgenler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Üçgenler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/benzerlik.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Benzerlik</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/donusum-geometrisi.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Dönüşüm Geometrisi</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/matematik/geometrik-cisimler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #38bdf8;"></i> Geometrik Cisimler</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <!-- 6. TÜRKÇE (dersler/turkce/) -->
+            <div class="ders-kart-fix" style="border: 1px solid rgba(236, 72, 153, 0.4); border-top: 5px solid #ec4899;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="width: 46px; height: 46px; background: rgba(236, 72, 153, 0.2); color: #ec4899; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.25rem;">Türkçe</h3>
+                        <span style="color: #94a3b8; font-size: 0.85rem;">Dil Bilgisi & Anlam</span>
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleAcc('tr_konular')" style="width: 100%; justify-content: space-between; display: flex; align-items: center; background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); color: #ec4899; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer;">
+                    <span><i class="fa-solid fa-book-bookmark"></i> Konuları Göster</span>
+                    <i class="fa-solid fa-chevron-down" id="tr_konular_icon"></i>
+                </button>
+
+                <div id="tr_konular" style="display: none; flex-direction: column; gap: 8px; margin-top: 12px;">
+                    <a href="dersler/turkce/fiilimsiler.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #ec4899;"></i> Fiilimsiler (Eylemsiler)</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/turkce/sozcukte-anlam.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #ec4899;"></i> Sözcükte Anlam</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/turkce/cumlede-anlam.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #ec4899;"></i> Cümlede Anlam</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/turkce/fiilde-cati.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #ec4899;"></i> Fiilde Çatı</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="dersler/turkce/paragrafta-anlam.html" class="ders-link"><span><i class="fa-solid fa-angle-right" style="color: #ec4899;"></i> Paragraf & Sözel Mantık</span><i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- KONU TAKİP BİLGİ POPUP'I -->
+    <div id="konuTakipModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
+        <div class="ders-kart-fix" style="max-width: 480px; width: 100%; background: #1e293b !important; border: 1px solid rgba(56, 189, 248, 0.4) !important; border-radius: 20px !important; padding: 2rem !important; position: relative; text-align: center;">
+            <button onclick="closeKonuTakipAlert()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; color: #f8fafc; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="width: 60px; height: 60px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem auto;"><i class="fa-solid fa-hourglass-half"></i></div>
+            <h2 style="color: #f8fafc; margin: 0 0 10px 0; font-size: 1.4rem; font-weight: 800;">Konu Takip Paneli</h2>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                Konu Takip Modülü şu anda geliştirilme aşamasındadır. Çok yakında tüm LGS konularını kutucuklarla işaretleyip yüzdelik gelişiminizi takip edebileceksiniz!
+            </p>
+            <button onclick="closeKonuTakipAlert()" style="width: 100%; background: #38bdf8; color: #0f172a; font-weight: 800; border: none; padding: 11px; border-radius: 10px; cursor: pointer;">Anladım</button>
+        </div>
+    </div>
+
+    <!-- HAKKIMDA POPUP -->
+    <div id="hakkimdaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
+        <div class="ders-kart-fix" style="max-width: 500px; width: 100%; background: #1e293b !important; border: 1px solid rgba(56, 189, 248, 0.4) !important; border-radius: 20px !important; padding: 2rem !important; position: relative;">
+            <button onclick="closeHakkimda()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; color: #f8fafc; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+                <div style="width: 48px; height: 48px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="fa-solid fa-user-graduate"></i></div>
+                <div>
+                    <h2 style="color: #f8fafc; margin: 0; font-size: 1.4rem; font-weight: 800;">Hakkımızda & NetMatik</h2>
+                    <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">LGS Hazırlığında Ücretsiz Dijital Rehber</span>
+                </div>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+                <strong>NetMatik</strong>, 8. sınıf LGS sınavına hazırlanan öğrencilerin ders eksiklerini gidermek, akıllı rehberlik desteği sunmak ve sınav konularına pratik yoldan ulaşmasını sağlamak için oluşturulmuş dijital platformdur.
+            </p>
+            <button onclick="closeHakkimda()" style="width: 100%; background: #38bdf8; color: #0f172a; font-weight: 800; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">Anladım, Kapat</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem; padding: 2rem 1rem; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(15, 23, 42, 0.95); text-align: center;">
+        <div style="display: flex; align-items: center; gap: 8px; color: #cbd5e1; font-size: 0.9rem;">
+            <i class="fa-solid fa-envelope" style="color: #38bdf8;"></i>
+            İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 700;">bartuemre20122012@gmail.com</a>
+        </div>
+        <div style="color: #94a3b8; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <img src="./assets/meblogo.png" alt="MEB Logo" style="height: 18px; width: auto;">
+            Milli Eğitim Bakanlığı (MEB) LGS Müfredatı ile Uyumlu Olarak Hazırlanmıştır.
+        </div>
+        <div style="color: #64748b; font-size: 0.8rem; margin-top: 2px;">&copy; 2026 NetMatik. Tüm hakları saklıdır.</div>
+    </footer>
+
+    <!-- JS SCRIPTS -->
+    <script>
+        function toggleAcc(id) {
+            const container = document.getElementById(id);
+            const icon = document.getElementById(id + '_icon');
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'flex';
+                if(icon) icon.style.transform = 'rotate(180deg)';
+            } else {
+                container.style.display = 'none';
+                if(icon) icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function openHakkimda() { document.getElementById('hakkimdaModal').style.display = 'flex'; }
+        function closeHakkimda() { document.getElementById('hakkimdaModal').style.display = 'none'; }
+
+        function openKonuTakipAlert() { document.getElementById('konuTakipModal').style.display = 'flex'; }
+        function closeKonuTakipAlert() { document.getElementById('konuTakipModal').style.display = 'none'; }
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
