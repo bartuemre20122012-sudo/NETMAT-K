@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eşitsizlikler | 8. Sınıf LGS Matematik - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="index.html"><i class="fa-solid fa-list-check"></i> Matematik Konuları</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-square-root-variable"></i> 8. Sınıf Matematik - 4. Ünite
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    1. Dereceden Bir Bilinmeyenli Eşitsizlikler
+                </h1>
+            </div>
+            <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Konu Listesine Dön
+            </a>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Eşitsizlikler Tam Konu Özeti PDF</h3>
+                        <p style="margin-bottom: 0;">LGS'de soru kaçırmamak için yön değiştirme kuralları ve sayı doğrusu gösterimleri tek dosyada!</p>
+                    </div>
+                </div>
+                <a href="../../ozetler/matematik/esitsizlikler.pdf" target="_blank" style="background: #f59e0b; color: #0f172a; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: EŞİTSİZLİK SEMBOLLERİ VE CÜMLELERİ CEBİRSEL İFADEYE ÇEVİRME -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Eşitsizlik Sembolleri ve Günlük Hayat Cümleleri
+            </h2>
+            
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                İki niceliğin birbirine eşit olmadığını veya büyüklük/küçüklük durumunu ifade eden bağıntılara <strong>eşitsizlik</strong> denir.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); text-align: center;">
+                    <span style="font-size: 1.8rem; font-weight: 800; color: #38bdf8;">&lt;</span>
+                    <h4 style="color: #cbd5e1; margin-top: 5px;">Küçüktür</h4>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">"18 yaşından küçük olanlar"</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); text-align: center;">
+                    <span style="font-size: 1.8rem; font-weight: 800; color: #a855f7;">&gt;</span>
+                    <h4 style="color: #cbd5e1; margin-top: 5px;">Büyüktür</h4>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">"Hızı 90 km'den fazla olanlar"</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); text-align: center;">
+                    <span style="font-size: 1.8rem; font-weight: 800; color: #22c55e;">&le;</span>
+                    <h4 style="color: #cbd5e1; margin-top: 5px;">Küçük veya Eşit</h4>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">"En fazla 50 TL harcayanlar"</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); text-align: center;">
+                    <span style="font-size: 1.8rem; font-weight: 800; color: #f59e0b;">&ge;</span>
+                    <h4 style="color: #cbd5e1; margin-top: 5px;">Büyük veya Eşit</h4>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">"En az 70 puan alanlar"</p>
+                </div>
+            </div>
+
+            <!-- Cümle Dönüştürme Tablosu -->
+            <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: #38bdf8; margin-bottom: 10px;"><i class="fa-solid fa-language"></i> Soru Kalıplarından Eşitsizliğe Geçiş Örnekleri</h4>
+                <ul style="margin-left: 20px; font-size: 0.95rem; line-height: 1.9; color: #cbd5e1;">
+                    <li>"Bir sayının 3 katının 5 fazlası 20'den küçüktür." ➔ <code>3x + 5 < 20</code></li>
+                    <li>"Ağırlığı en fazla 500 kg olan asansör" ➔ <code>x ≤ 500</code></li>
+                    <li>"Ehliyet almak için yaşın en az 18 olması gerekir." ➔ <code>x ≥ 18</code></li>
+                    <li>"Hangi sayıların 2 eksiğinin yarısı 10'dan büyüktür?" ➔ <code>(x - 2) / 2 > 10</code></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: EŞİTSİZLİKLERİ SAYI DOĞRUSUNDA GÖSTERME -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Sayı Doğrusunda Gösterme (İçi Dolu vs İçi Boş Daire)
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Eşitsizliğin çözümü sayı doğrusunda gösterilirken çizilen dairenin içinin dolu veya boş olması eşitlik durumuna bağlıdır.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #f43f5e; margin-bottom: 8px;"><i class="fa-regular fa-circle"></i> İçi BOŞ Daire (<code><</code> ve <code>></code>)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Eşitlik sembolü yoksa o sınır değeri çözüme <strong>dahil değildir!</strong> Noktanın içi boş bırakılır.<br>
+                        <em>Örnek: <code>x > 3</code> gösteriminde 3 noktasının içi boş çizilir ve sağ taraf taranır.</em>
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-circle"></i> İçi DOLU Daire (<code>≤</code> ve <code>≥</code>)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Eşitlik sembolü varsa o sınır değeri çözüme <strong>dahildir!</strong> Noktanın içi boyanarak doldurulur.<br>
+                        <em>Örnek: <code>x ≤ 5</code> gösteriminde 5 noktasının içi dolu çizilir ve sol taraf taranır.</em>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: EŞİTSİZLİK ÇÖZÜMÜ VE NEGATİF SAYI TUZAĞI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                3. Eşitsizlik Çözme Kuralları ve Yön Değiştirme
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Eşitsizlikler tıpkı denklemler gibi çözülür. Bilinenler bir tarafa, bilinmeyenler diğer tarafa toplanır. Ancak LGS'de soru kaybettiren <strong>en kritik 1 kural</strong> vardır:
+            </p>
+
+            <!-- LGS KRİTİK YÖN DEĞİŞTİRME KUTUSU -->
+            <div style="background: rgba(244, 63, 94, 0.1); border: 2px dashed #f43f5e; padding: 18px; border-radius: 12px; margin-bottom: 1.5rem;">
+                <h3 style="color: #f43f5e; font-size: 1.25rem; margin-bottom: 8px;"><i class="fa-solid fa-triangle-exclamation"></i> LGS'nin En Büyük Tuzağı: Negatif Sayı İle Çarpma / Bölme</h3>
+                <p style="font-size: 1rem; line-height: 1.7; color: #f8fafc;">
+                    Bir eşitsizliğin her iki tarafı <strong>NEGATİF BİR SAYI</strong> ile çarpılırsa veya bölünürse eşitsizlik sembolü <strong>YÖN DEĞİŞTİRİR!</strong>
+                </p>
+                <ul style="margin-left: 20px; font-size: 0.95rem; line-height: 1.9; color: #cbd5e1; margin-top: 8px;">
+                    <li><code><</code> sembolü ➔ <code>></code> olur</li>
+                    <li><code>></code> sembolü ➔ <code><</code> olur</li>
+                    <li><code>≤</code> sembolü ➔ <code>≥</code> olur</li>
+                    <li><code>≥</code> sembolü ➔ <code>≤</code> olur</li>
+                </ul>
+                <div style="background: rgba(15, 23, 42, 0.8); padding: 10px 15px; border-radius: 8px; margin-top: 10px; font-size: 0.95rem;">
+                    <em>Örnek: <code>-2x < 10</code> işlemini çözerken her iki tarafı -2'ye böleriz. Sembol yön değiştirir:<br>
+                    <strong style="color: #22c55e;">x > -5</strong> olur! (Eğer yön değiştirmezsen soru gider!).</em>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 4: LGS YENİ NESİL ÖRNEK SORU ÇÖZÜMÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                4. LGS Tarzı Yeni Nesil Tarife Karşılaştırma Soru Çözümü
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 20px; border-radius: 12px;">
+                <p style="font-weight: 600; font-size: 1rem; color: #f8fafc; margin-bottom: 12px;">
+                    <strong>Soru:</strong> Bir internet şirketi müşterilerine iki farklı tarife sunmaktadır:<br>
+                    • <strong>A Tarifesi:</strong> Aylık 100 TL sabit ücret + Kullanılan her GB için 4 TL.<br>
+                    • <strong>B Tarifesi:</strong> Aylık 160 TL sabit ücret + Kullanılan her GB için 2 TL.<br>
+                    Buna göre bir ayda kaç GB'ın üzerinde internet kullanan bir müşteri için <strong>B tarifesi A tarifesinden daha ekonomik (ucuz)</strong> olur?
+                </p>
+
+                <div style="background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; margin-top: 15px;">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-check-double"></i> Adım Adım Çözüm:</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7; color: #cbd5e1;">
+                        1. **Değişkeni Tanımlayalım:** Kullanılan internet miktarı <code>x</code> GB olsun.<br>
+                        2. **Tarife Ücret Denklemlerini kuralım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• A Tarifesi Ücreti = <code>100 + 4x</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• B Tarifesi Ücreti = <code>160 + 2x</code><br>
+                        3. **"B Tarifesi Daha Ekonomik" Şartını Eşitsizliğe Dönüştürelim:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;B Tarifesi < A Tarifesi<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>160 + 2x < 100 + 4x</code><br>
+                        4. **Eşitsizliği Çözelim:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>160 - 100 < 4x - 2x</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>60 < 2x</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>30 < x</code> &nbsp;➔&nbsp; <code>x > 30</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #38bdf8;">Sonuç: 30 GB'ın üzerinde (en az 31 GB) internet kullanan biri için B tarifesi daha ucuzdur.</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

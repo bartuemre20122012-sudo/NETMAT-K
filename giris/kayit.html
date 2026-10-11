@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayıt Ol | NetMatik</title>
+  <!-- Kimlik kartını bağladık -->
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0b1329">
+
+<!-- Arka plan bekçisini çalıştıran kod -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js');
+  }
+</script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: #0b1329;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .kayit-card {
+      background-color: #131f37;
+      border: 1px solid #1e2e4a;
+      border-radius: 20px;
+      padding: 35px 30px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Logo Alanı */
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      max-width: 220px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo-placeholder {
+      font-size: 26px;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: -0.5px;
+    }
+    
+    .logo-placeholder span {
+      color: #22c55e;
+    }
+
+    .logo-subtext {
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      margin-top: 2px;
+      text-transform: uppercase;
+    }
+
+    .kayit-card h1 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .kayit-card p.subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-wrapper .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #38bdf8;
+      pointer-events: none;
+    }
+
+    .input-wrapper input {
+      width: 100%;
+      background-color: #0c162c;
+      border: 1px solid #1e2e4d;
+      border-radius: 10px;
+      padding: 12px 14px 12px 42px;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-wrapper input:focus {
+      border-color: #0ea5e9;
+      box-shadow: 0 0 12px rgba(14, 165, 233, 0.3);
+    }
+
+    .input-wrapper input::placeholder {
+      color: #475569;
+    }
+
+    /* Şifre Kriterleri */
+    .sifre-kriterleri {
+      background-color: #0c162c;
+      border: 1px solid #1e2e4d;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .kriter {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .kriter:last-child {
+      margin-bottom: 0;
+    }
+
+    .kriter::before {
+      content: '❌';
+      font-size: 10px;
+    }
+
+    .kriter.basarili {
+      color: #22c55e;
+    }
+
+    .kriter.basarili::before {
+      content: '✅';
+    }
+
+    /* Captcha Alanı */
+    .captcha-box {
+      background-color: #0c162c;
+      border: 1px solid #1e2e4d;
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .captcha-question {
+      font-weight: 700;
+      font-size: 15px;
+      color: #38bdf8;
+      background-color: #131f37;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px dashed #1e2e4d;
+      user-select: none;
+      letter-spacing: 1px;
+    }
+
+    .captcha-input {
+      flex: 1;
+      background-color: #131f37 !important;
+      border: 1px solid #1e2e4d !important;
+      border-radius: 8px !important;
+      padding: 8px 12px !important;
+      color: #ffffff !important;
+      font-size: 14px !important;
+      outline: none;
+    }
+
+    .btn-kayit {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn-kayit:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
+    }
+
+    .btn-kayit:disabled {
+      background: #1e2e4d;
+      color: #64748b;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    .bottom-links {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .bottom-links a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .bottom-links a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #64748b;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #94a3b8;
+    }
+
+    #hataMesaji {
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      font-size: 13px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kayit-card">
+    
+    <!-- Gerçek Logo Yolu -->
+    <div class="logo-container">
+      <img src="../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" onerror="this.src='assets/Gemini_Generated_Image_-Photoroom.png'; this.onerror=function(){ this.style.display='none'; document.getElementById('logoYazi').style.display='block'; };">
+      <div id="logoYazi" style="display:none;">
+        <div class="logo-placeholder">NET<span>MATİK</span></div>
+        <div class="logo-subtext">BAŞARININ DİJİTAL ANAHTARI</div>
+      </div>
+    </div>
+
+    <h1>NetMatik'e Kayıt Olun</h1>
+    <p class="subtitle">Aramıza Katılarak İlerleyin</p>
+    
+    <form id="kayitFormu">
+      <div id="hataMesaji">Lütfen tüm bilgileri doğru girin!</div>
+
+      <div class="form-group">
+        <label for="adSoyad">Ad Soyad</label>
+        <div class="input-wrapper">
+          <span class="input-icon">👤</span>
+          <input type="text" id="adSoyad" placeholder="Adınızı ve soyadınızı girin" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-Posta Adresi</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✉</span>
+          <input type="email" id="email" placeholder="ornek@email.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sifre">Şifre Oluştur</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="sifre" placeholder="••••••••" required>
+        </div>
+        
+        <div class="sifre-kriterleri" id="kriterKutusu">
+          <div class="kriter" id="kriterUzunluk">En az 8 karakter</div>
+          <div class="kriter" id="kriterBuyukHarf">En az 1 BÜYÜK harf</div>
+          <div class="kriter" id="kriterKucukHarf">En az 1 küçük harf</div>
+          <div class="kriter" id="kriterSayi">En az 1 rakam (0-9)</div>
+          <div class="kriter" id="kriterOzel">En az 1 özel karakter (!@#$%^&*)</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sifreTekrar">Şifre Tekrar</label>
+        <div class="input-wrapper">
+          <span class="input-icon">🔒</span>
+          <input type="password" id="sifreTekrar" placeholder="••••••••" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Güvenlik Doğrulaması</label>
+        <div class="captcha-box">
+          <div class="captcha-question" id="captchaSoru">5 + 3 = ?</div>
+          <input type="number" id="captchaCevap" class="captcha-input" placeholder="Sonucu yazın" required>
+        </div>
+      </div>
+
+      <button type="submit" id="kayitButonu" class="btn-kayit" disabled>➔ Kayıt Ol</button>
+    </form>
+    
+    <div class="bottom-links">
+      Zaten hesabınız var mı? <a href="giris.html">Hemen Giriş Yapın</a>
+    </div>
+
+    <a href="İndex.html" class="back-link">← Ana Sayfaya Dön</a>
+  </div>
+
+  <script>
+    let captchaDogruCevap = 0;
+    
+    function captchaUret() {
+      const sayi1 = Math.floor(Math.random() * 10) + 1; 
+      const sayi2 = Math.floor(Math.random() * 10) + 1;
+      captchaDogruCevap = sayi1 + sayi2;
+      document.getElementById('captchaSoru').innerText = `${sayi1} + ${sayi2} = ?`;
+    }
+    
+    captchaUret();
+
+    const sifreInput = document.getElementById('sifre');
+    const sifreTekrarInput = document.getElementById('sifreTekrar');
+    const kayitButonu = document.getElementById('kayitButonu');
+    const captchaInput = document.getElementById('captchaCevap');
+    
+    let sifreGecerliMi = false;
+
+    sifreInput.addEventListener('input', function() {
+      const p = this.value;
+      
+      const uzunluk = p.length >= 8;
+      const buyukHarf = /[A-Z]/.test(p);
+      const kucukHarf = /[a-z]/.test(p);
+      const sayi = /[0-9]/.test(p);
+      const ozel = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(p);
+
+      document.getElementById('kriterUzunluk').className = uzunluk ? 'kriter basarili' : 'kriter';
+      document.getElementById('kriterBuyukHarf').className = buyukHarf ? 'kriter basarili' : 'kriter';
+      document.getElementById('kriterKucukHarf').className = kucukHarf ? 'kriter basarili' : 'kriter';
+      document.getElementById('kriterSayi').className = sayi ? 'kriter basarili' : 'kriter';
+      document.getElementById('kriterOzel').className = ozel ? 'kriter basarili' : 'kriter';
+
+      sifreGecerliMi = uzunluk && buyukHarf && kucukHarf && sayi && ozel;
+      formuKontrolEt();
+    });
+
+    sifreTekrarInput.addEventListener('input', formuKontrolEt);
+    captchaInput.addEventListener('input', formuKontrolEt);
+
+    function formuKontrolEt() {
+      const sifreAyniMi = sifreInput.value === sifreTekrarInput.value && sifreInput.value !== "";
+      const captchaDogruMu = parseInt(captchaInput.value) === captchaDogruCevap;
+      
+      if (sifreGecerliMi && sifreAyniMi && captchaDogruMu) {
+        kayitButonu.disabled = false;
+      } else {
+        kayitButonu.disabled = true;
+      }
+    }
+
+    document.getElementById('kayitFormu').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+      const ad = document.getElementById('adSoyad').value;
+      const email = document.getElementById('email').value;
+      const sifre = sifreInput.value;
+
+      const yeniKullanici = {
+        id: Date.now(),
+        adSoyad: ad,
+        email: email,
+        sifre: sifre, 
+        kayitTarihi: new Date().toLocaleString('tr-TR')
+      };
+
+      let netmatikUsers = JSON.parse(localStorage.getItem('netmatik_users')) || [];
+      
+      const emailVarMi = netmatikUsers.find(user => user.email === email);
+      if (emailVarMi) {
+        const hata = document.getElementById('hataMesaji');
+        hata.innerText = "Bu e-posta adresi ile zaten kayıt olunmuş!";
+        hata.style.display = 'block';
+        return; 
+      }
+
+      netmatikUsers.push(yeniKullanici);
+      localStorage.setItem('netmatik_users', JSON.stringify(netmatikUsers));
+
+      alert(`Kayıt Başarılı! Hoş geldin ${ad}.\nŞimdi giriş sayfasına yönlendiriliyorsun...`);
+      
+      window.location.href = "giris.html"; 
+    });
+  </script>
+</body>
+</html>

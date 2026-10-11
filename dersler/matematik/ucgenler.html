@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üçgenler | 8. Sınıf LGS Matematik - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="index.html"><i class="fa-solid fa-list-check"></i> Matematik Konuları</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-square-root-variable"></i> 8. Sınıf Matematik - 5. Ünite
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    Üçgenler (Yardımcı Elemanlar, Eşitsizlik & Pisagor)
+                </h1>
+            </div>
+            <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Konu Listesine Dön
+            </a>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Üçgenler Tam Konu Özeti PDF</h3>
+                        <p style="margin-bottom: 0;">LGS geometri katlama soruları, özel üçgenler ve Pisagor taktikleri tek dosyada!</p>
+                    </div>
+                </div>
+                <a href="../../ozetler/matematik/ucgenler.pdf" target="_blank" style="background: #38bdf8; color: #0f172a; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: ÜÇGENİN YARDIMCI ELEMANLARI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Üçgenin Yardımcı Elemanları (Kenarortay, Açıortay, Yükseklik)
+            </h2>
+            
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Bir üçgenin temel elemanları kenarları ve iç açılarıdır. Bu elemanları destekleyen 3 ana yardımcı eleman bulunur:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <!-- Kenarortay -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-scissors"></i> 1) Kenarortay (V)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Bir köşeyi karşı kenarın **orta noktasına** birleştiren doğru parçasıdır. Karşı kenarı iki eşit parçaya böler.<br>
+                        <em>LGS Katlama Taktiği: Köşenin köşe üzerine katlanmasıyla kenarortay bulunur!</em>
+                    </p>
+                </div>
+
+                <!-- Açıortay -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #a855f7; margin-bottom: 8px;"><i class="fa-solid fa-angle-left"></i> 2) Açıortay (n)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Bir iç açıyı **iki eş açıya** bölen doğru parçasıdır.<br>
+                        <em>LGS Katlama Taktiği: Kenarın kenar üzerine katlanmasıyla açıortay elde edilir!</em>
+                    </p>
+                </div>
+
+                <!-- Yükseklik -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-ruler-vertical"></i> 3) Yükseklik (h)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Bir köşeden karşı kenara (veya uzantısına) inen **dik doğru parçasıdır** ($\perp$).<br>
+                        Geniş açılı üçgenlerde dikey yükseklikler üçgenin dış bölgesindedir.
+                    </p>
+                </div>
+            </div>
+
+            <!-- İkizkenar ve Eşkenar Üçgen Kodlama Kutusu -->
+            <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 15px; border-radius: 8px; color: #f8fafc;">
+                <h3 style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 8px;"><i class="fa-solid fa-bolt"></i> LGS Süper Kodlama: İkizkenarda "YAKI" Kuralı</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    İkizkenar üçgende tabana inen doğru parçası hem <strong>Yükseklik</strong>, hem <strong>Açıortay</strong>, hem <strong>Kenarortay</strong>'dır. (Akılda tutma kodlaması: <strong>Y-A-K-I</strong>).<br>
+                    Eşkenar üçgende ise 3 köşeden inen TÜM yardımcı elemanlar birbirine birebir eşittir (<code>h = n = V</code>).
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: ÜÇGEN EŞİTSİZLİĞİ VE AÇI-KENAR BAĞINTILARI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Üçgen Eşitsizliği ve Açı-Kenar Bağıntıları
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Rastgele verilen 3 doğru parçası her zaman bir üçgen oluşturmaz! Çizim yapılabilmesi için iki temel şart vardır:
+            </p>
+
+            <div style="background: rgba(168, 85, 247, 0.1); border: 2px dashed #a855f7; padding: 18px; border-radius: 12px; margin-bottom: 1.5rem;">
+                <h3 style="color: #a855f7; font-size: 1.2rem; margin-bottom: 10px;"><i class="fa-solid fa-shapes"></i> 1) Üçgen Eşitsizliği Formülü</h3>
+                <p style="font-size: 0.95rem; line-height: 1.8; color: #f8fafc;">
+                    Bir üçgende herhangi bir kenarın uzunluğu, diğer iki kenarın <strong>farkının mutlak değerinden büyük</strong>, <strong>toplamından küçük</strong> olmak zorundadır!<br>
+                    <strong style="color: #38bdf8; font-size: 1.1rem;"><code>|b - c| < a < b + c</code></strong><br>
+                    <em>Örnek: Kenarları 6 cm ve 10 cm olan üçgenin 3. kenarı ($x$): <code>|10 - 6| < x < 10 + 6</code> ➔ <strong><code>4 < x < 16</code></strong> aralığındadır.</em>
+                </p>
+            </div>
+
+            <div style="background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> 2) Açı - Kenar Bağıntısı Kuralı</h4>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Bir üçgende <strong>büyük açı karşısında büyük kenar</strong>, <strong>küçük açı karşısında küçük kenar</strong> bulunur.<br>
+                    <code>m(A) > m(B) > m(C)  ⇒  a > b > c</code><br>
+                    <em>Tuzak: Ortak kenarı olan iki farklı üçgende en uzun kenar sorulduğunda, ok çıkarma yöntemiyle açıların karşısına bakılır!</em>
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: PİSAG

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGS Konu Takip & İnteraktif Checklist | NetMatik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="İndex.html">
+                <img src="./assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="konu-takip.html" class="active"><i class="fa-solid fa-list-check"></i> Konu Takip</a>
+            <a href="lgspuan.html"><i class="fa-solid fa-calculator"></i> Net Hesapla</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <!-- Üst Başlık & İlerleme Çubuğu -->
+        <div style="margin-bottom: 2rem; text-align: center;">
+            <span style="color: #38bdf8; font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                <i class="fa-solid fa-chart-pie"></i> LGS 2027 Müfredat Haritası
+            </span>
+            <h1 style="font-size: 2.2rem; font-weight: 800; color: #f8fafc; margin-top: 5px;">
+                LGS İnteraktif Konu Takip Paneli
+            </h1>
+            <p style="color: #94a3b8; font-size: 1rem; margin-top: 5px;">
+                Çalışıp bitirdiğin konulara tik at kanka, ilerlemen anında tarayıcına kaydolur!
+            </p>
+        </div>
+
+        <!-- İLERLEME KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; padding: 1.5rem; background: rgba(30, 41, 59, 0.9); border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px;">
+                <strong style="color: #f8fafc; font-size: 1.1rem;">Genel LGS Tamamlanma Oranı:</strong>
+                <span id="tamamlanan_txt" style="color: #38bdf8; font-weight: 800; font-size: 1.2rem;">0 / 0 Konu (%0)</span>
+            </div>
+            <div style="width: 100%; background: rgba(255,255,255,0.1); height: 14px; border-radius: 7px; overflow: hidden;">
+                <div id="genel_progress" style="width: 0%; height: 100%; background: linear-gradient(90deg, #38bdf8, #22c55e); transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+
+        <!-- DERS KONU KARTLARI KONTAYNERİ -->
+        <div id="dersler_konteyner" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+            <p style="color: #94a3b8;">Konular yükleniyor...</p>
+        </div>
+
+    </main>
+
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // data/ekonular.txt verisini fetch ile çek
+            fetch('data/ekonular.txt')
+                .then(response => response.json())
+                .then(derslerData => {
+                    renderKonular(derslerData);
+                })
+                .catch(err => {
+                    console.error("Konular yüklenirken hata oluştu:", err);
+                    document.getElementById('dersler_konteyner').innerHTML = `<p style="color:#ef4444;">data/ekonular.txt okunurken hata oluştu kanka. Dosya yolunu kontrol et!</p>`;
+                });
+
+            function renderKonular(dersler) {
+                const container = document.getElementById('dersler_konteyner');
+                container.innerHTML = "";
+                let toplamKonuSayisi = 0;
+
+                // LocalStorage'dan kayıtlı tikleri al
+                let savedData = JSON.parse(localStorage.getItem('netmatik_konular')) || {};
+
+                dersler.forEach((dersObj, dIndex) => {
+                    toplamKonuSayisi += dersObj.konular.length;
+
+                    let cardHtml = `
+                        <div class="ders-kart" style="border-top: 5px solid ${dersObj.renk}; cursor: default;">
+                            <h3 style="color: ${dersObj.renk}; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                                <span>${dersObj.ders}</span>
+                                <span style="font-size: 0.85rem; color: #94a3b8;" id="ders_oran_${dIndex}">0/${dersObj.konular.length}</span>
+                            </h3>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                    `;
+
+                    dersObj.konular.forEach((konu, kIndex) => {
+                        let key = `k_${dIndex}_${kIndex}`;
+                        let checked = savedData[key] ? 'checked' : '';
+
+                        cardHtml += `
+                            <label style="display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: #cbd5e1; cursor: pointer; background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                                <input type="checkbox" data-key="${key}" data-dindex="${dIndex}" ${checked} onchange="toggleKonu(this)" style="width: 18px; height: 18px; accent-color: ${dersObj.renk}; cursor: pointer;">
+                                <span style="${checked ? 'text-decoration: line-through; opacity: 0.6;' : ''}">${konu}</span>
+                            </label>
+                        `;
+                    });
+
+                    cardHtml += `</div></div>`;
+                    container.innerHTML += cardHtml;
+                });
+
+                window.derslerDataGlobal = dersler;
+                guncelleİlerleme();
+            }
+
+            window.toggleKonu = function(checkbox) {
+                let key = checkbox.getAttribute('data-key');
+                let labelText = checkbox.nextElementSibling;
+                let savedData = JSON.parse(localStorage.getItem('netmatik_konular')) || {};
+
+                if (checkbox.checked) {
+                    savedData[key] = true;
+                    labelText.style.textDecoration = 'line-through';
+                    labelText.style.opacity = '0.6';
+                } else {
+                    delete savedData[key];
+                    labelText.style.textDecoration = 'none';
+                    labelText.style.opacity = '1';
+                }
+
+                localStorage.setItem('netmatik_konular', JSON.stringify(savedData));
+                guncelleİlerleme();
+            };
+
+            function guncelleİlerleme() {
+                let savedData = JSON.parse(localStorage.getItem('netmatik_konular')) || {};
+                let bitenSayisi = Object.keys(savedData).length;
+                let toplamKonu = 0;
+
+                if (window.derslerDataGlobal) {
+                    window.derslerDataGlobal.forEach((ders, dIndex) => {
+                        toplamKonu += ders.konular.length;
+                        let dersBiten = 0;
+                        ders.konular.forEach((_, kIndex) => {
+                            if (savedData[`k_${dIndex}_${kIndex}`]) dersBiten++;
+                        });
+                        let dersOranEl = document.getElementById(`ders_oran_${dIndex}`);
+                        if (dersOranEl) dersOranEl.innerText = `${dersBiten}/${ders.konular.length}`;
+                    });
+                }
+
+                let oran = toplamKonu > 0 ? Math.round((bitenSayisi / toplamKonu) * 100) : 0;
+                document.getElementById('tamamlanan_txt').innerText = `${bitenSayisi} / ${toplamKonu} Konu (%${oran})`;
+                document.getElementById('genel_progress').style.width = `${oran}%`;
+            }
+
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>

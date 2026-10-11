@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGS Net & Puan Hesaplama | NetMatik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/Gemini_Generated_Image_-Photoroom.png">
+    
+    <style>
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 900px) {
+            .calc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ders-input-card {
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .ders-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .ders-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .net-badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .inputs-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .num-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: #f8fafc;
+            font-size: 1rem;
+            font-weight: 700;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+        }
+
+        .num-input:focus {
+            border-color: #38bdf8;
+        }
+
+        /* SONUÇ KARTLARI */
+        .result-card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            position: sticky;
+            top: 20px;
+        }
+
+        .puan-display {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin: 15px 0 10px 0;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .motivasat-text {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .total-net-box {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-reset {
+            width: 100%;
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-reset:hover {
+            background: rgba(239, 68, 68, 0.3);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVİGASYON BARI -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="İndex.html">
+                <img src="./assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" style="height: 48px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="koc/akilli-koc.html"><i class="fa-solid fa-robot"></i> Akıllı Koç</a>
+            <a href="koc/soru-sor.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Soru Analiz</a>
+            <a href="lgspuan.html" class="active"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+            <a href="javascript:void(0)" onclick="openHakkimda()"><i class="fa-solid fa-user-graduate"></i> Hakkımda</a>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 1100px; margin-top: 2rem;">
+        
+        <!-- ÜST ETİKET VE BAŞLIK -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px; margin-bottom: 2rem;">
+            <div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <img src="./assets/meblogo.png" alt="MEB Logo" style="height: 28px; width: auto; vertical-align: middle;">
+                    <span style="color: #38bdf8; font-weight: 800; font-size: 0.88rem; text-transform: uppercase;">
+                        MEB MÜFREDATI İLE UYUMLU HESAPLAMA MOTORU
+                    </span>
+                </div>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: #f8fafc; margin: 0;">
+                    LGS Net & Puan Hesaplama
+                </h1>
+            </div>
+            <a href="İndex.html" style="color: #38bdf8; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; background: rgba(56, 189, 248, 0.1); padding: 8px 16px; border-radius: 10px; border: 1px solid rgba(56, 189, 248, 0.3);">
+                <i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön
+            </a>
+        </div>
+
+        <!-- HESAPLAMA IZGARASI -->
+        <div class="calc-grid">
+            
+            <!-- DERS GİRDİLERİ (SOL KOLON) -->
+            <div>
+                
+                <!-- TÜRKÇE -->
+                <div class="ders-input-card" style="border-left: 5px solid #ec4899;">
+                    <div class="ders-header">
+                        <span class="ders-title"><i class="fa-solid fa-book-open-reader" style="color: #ec4899;"></i> Türkçe (20 Soru)</span>
+                        <span class="net-badge" id="net_tr">Net: 0.00</span>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label>Doğru Sayısı</label>
+                            <input type="number" id="tr_d" min="0" max="20" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                        <div class="input-group">
+                            <label>Yanlış Sayısı</label>
+                            <input type="number" id="tr_y" min="0" max="20" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MATEMATİK -->
+                <div class="ders-input-card" style="border-left: 5px solid #38bdf8;">
+                    <div class="ders-header">
+                        <span class="ders-title"><i class="fa-solid fa-calculator" style="color: #38bdf8;"></i> Matematik (20 Soru)</span>
+                        <span class="net-badge" id="net_mat">Net: 0.00</span>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label>Doğru Sayısı</label>
+                            <input type="number" id="mat_d" min="0" max="20" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                        <div class="input-group">
+                            <label>Yanlış Sayısı</label>
+                            <input type="number" id="mat_y" min="0" max="20" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FEN BİLİMLERİ -->
+                <div class="ders-input-card" style="border-left: 5px solid #22c55e;">
+                    <div class="ders-header">
+                        <span class="ders-title"><i class="fa-solid fa-flask" style="color: #22c55e;"></i> Fen Bilimleri (20 Soru)</span>
+                        <span class="net-badge" id="net_fen">Net: 0.00</span>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label>Doğru Sayısı</label>
+                            <input type="number" id="fen_d" min="0" max="20" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                        <div class="input-group">
+                            <label>Yanlış Sayısı</label>
+                            <input type="number" id="fen_y" min="0" max="20" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İNKILAP TARİHİ -->
+                <div class="ders-input-card" style="border-left: 5px solid #f59e0b;">
+                    <div class="ders-header">
+                        <span class="ders-title"><i class="fa-solid fa-landmark" style="color: #f59e0b;"></i> İnkılap Tarihi (10 Soru)</span>
+                        <span class="net-badge" id="net_ink">Net: 0.00</span>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label>Doğru Sayısı</label>
+                            <input type="number" id="ink_d" min="0" max="10" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                        <div class="input-group">
+                            <label>Yanlış Sayısı</label>
+                            <input type="number" id="ink_y" min="0" max="10" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İNGİLİZCE -->
+                <div class="ders-input-card" style="border-left: 5px solid #a855f7;">
+                    <div class="ders-header">
+                        <span class="ders-title"><i class="fa-solid fa-language" style="color: #a855f7;"></i> İngilizce (10 Soru)</span>
+                        <span class="net-badge" id="net_ing">Net: 0.00</span>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label>Doğru Sayısı</label>
+                            <input type="number" id="ing_d" min="0" max="10" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                        <div class="input-group">
+                            <label>Yanlış Sayısı</label>
+                            <input type="number" id="ing_y" min="0" max="10" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DİN KÜLTÜRÜ -->
+                <div class="ders-input-card" style="border-left: 5px solid #ef4444;">
+                    <div class="ders-header">
+                        <span class="ders-title"><i class="fa-solid fa-mosque" style="color: #ef4444;"></i> Din Kültürü (10 Soru)</span>
+                        <span class="net-badge" id="net_din">Net: 0.00</span>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="input-group">
+                            <label>Doğru Sayısı</label>
+                            <input type="number" id="din_d" min="0" max="10" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                        <div class="input-group">
+                            <label>Yanlış Sayısı</label>
+                            <input type="number" id="din_y" min="0" max="10" value="0" class="num-input" oninput="hesapla()">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SONUÇ EKRANI (SAĞ KOLON) -->
+            <div>
+                <div class="result-card">
+                    <span style="color: #38bdf8; font-weight: 800; font-size: 0.88rem; text-transform: uppercase;">
+                        <i class="fa-solid fa-trophy"></i> TAHMİNİ LGS PUANIN
+                    </span>
+                    
+                    <div class="puan-display" id="toplam_puan">190.000</div>
+                    
+                    <p class="motivasat-text">
+                        Çalışmaya devam edin, her net sizi hedefinize bir adım daha yaklaştırır!
+                    </p>
+
+                    <div class="total-net-box">
+                        <span style="color: #cbd5e1; font-weight: 700;">Toplam Net (90 Soru Üzerinden):</span>
+                        <span style="color: #22c55e; font-weight: 900; font-size: 1.2rem;" id="toplam_net">0.00 Net</span>
+                    </div>
+
+                    <button type="button" onclick="sifirla()" class="btn-reset">
+                        <i class="fa-solid fa-rotate-right"></i> Değerleri Sıfırla
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- HESAPLAMA JAVASCRIPT MOTORU -->
+    <script>
+        function hesaplaDersNet(dId, yId) {
+            let d = parseFloat(document.getElementById(dId).value) || 0;
+            let y = parseFloat(document.getElementById(yId).value) || 0;
+            let net = d - (y / 3);
+            return net < 0 ? 0 : net;
+        }
+
+        function hesapla() {
+            let netTr = hesaplaDersNet('tr_d', 'tr_y');
+            let netMat = hesaplaDersNet('mat_d', 'mat_y');
+            let netFen = hesaplaDersNet('fen_d', 'fen_y');
+            let netInk = hesaplaDersNet('ink_d', 'ink_y');
+            let netIng = hesaplaDersNet('ing_d', 'ing_y');
+            let netDin = hesaplaDersNet('din_d', 'din_y');
+
+            document.getElementById('net_tr').innerText = 'Net: ' + netTr.toFixed(2);
+            document.getElementById('net_mat').innerText = 'Net: ' + netMat.toFixed(2);
+            document.getElementById('net_fen').innerText = 'Net: ' + netFen.toFixed(2);
+            document.getElementById('net_ink').innerText = 'Net: ' + netInk.toFixed(2);
+            document.getElementById('net_ing').innerText = 'Net: ' + netIng.toFixed(2);
+            document.getElementById('net_din').innerText = 'Net: ' + netDin.toFixed(2);
+
+            let toplamNet = netTr + netMat + netFen + netInk + netIng + netDin;
+            document.getElementById('toplam_net').innerText = toplamNet.toFixed(2) + ' Net';
+
+            // MEB LGS Katsayı Ağırlıklı Puan Oranlaması (Full 90 Net = 500 Puan)
+            let hamPuan = (netTr * 4.341) + (netMat * 4.253) + (netFen * 4.120) + (netInk * 1.682) + (netIng * 1.540) + (netDin * 1.870);
+            
+            let puan = 190.000 + (hamPuan / 305.20) * 310.000;
+
+            if (toplamNet >= 90) puan = 500.000;
+            if (puan > 500) puan = 500.000;
+            if (toplamNet <= 0) puan = 190.000;
+
+            document.getElementById('toplam_puan').innerText = puan.toFixed(3);
+        }
+
+        function sifirla() {
+            const inputs = document.querySelectorAll('.num-input');
+            inputs.forEach(input => input.value = 0);
+            hesapla();
+        }
+
+        document.addEventListener("DOMContentLoaded", hesapla);
+    </script>
+
+    <!-- HAKKIMDA MODAL -->
+    <div id="hakkimdaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
+        <div style="max-width: 500px; width: 100%; background: #1e293b; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 20px; padding: 2rem; position: relative;">
+            <button onclick="closeHakkimda()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; color: #f8fafc; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+                <div style="width: 48px; height: 48px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="fa-solid fa-user-graduate"></i></div>
+                <div>
+                    <h2 style="color: #f8fafc; margin: 0; font-size: 1.4rem; font-weight: 800;">Hakkımızda & NetMatik</h2>
+                    <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">LGS Hazırlığında Ücretsiz Dijital Rehber</span>
+                </div>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+                <strong>NetMatik</strong>, 8. sınıf LGS sınavına hazırlanan öğrencilerin ders eksiklerini gidermek ve sınav puanlarını gerçeğe en yakın katsayılarla hesaplamak için oluşturulmuş dijital platformdur.
+            </p>
+            <button onclick="closeHakkimda()" style="width: 100%; background: #38bdf8; color: #0f172a; font-weight: 800; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">Anladım, Kapat</button>
+        </div>
+    </div>
+
+    <script>
+        function openHakkimda() { document.getElementById('hakkimdaModal').style.display = 'flex'; }
+        function closeHakkimda() { document.getElementById('hakkimdaModal').style.display = 'none'; }
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

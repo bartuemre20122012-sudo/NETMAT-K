@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğrusal Denklemler & Eğim | 8. Sınıf LGS Matematik - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="index.html"><i class="fa-solid fa-list-check"></i> Matematik Konuları</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-square-root-variable"></i> 8. Sınıf Matematik - 4. Ünite
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    Doğrusal Denklemler & Eğim
+                </h1>
+            </div>
+            <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Konu Listesine Dön
+            </a>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Doğrusal Denklemler & Eğim PDF Özet</h3>
+                        <p style="margin-bottom: 0;">LGS'de soru kaçırmamak için grafik çizimleri, eğim formülleri ve özet notları indir!</p>
+                    </div>
+                </div>
+                <a href="../../ozetler/matematik/dogrusal-denklemler.pdf" target="_blank" style="background: #38bdf8; color: #0f172a; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: BİRİNCİ DERECEDEN BİR BİLİNMEYENLİ DENKLEMLER -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Birinci Dereceden Bir Bilinmeyenli Denklemlerin Çözümü
+            </h2>
+            
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                İçinde bir tane bilinmeyen bulunan ve bilinmeyenin kuvveti 1 olan eşitliklere <strong>birinci dereceden bir bilinmeyenli denklem</strong> denir. Denklem çözerken temel amaç <strong>bilinmeyeni yalnız bırakmaktır</strong>.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-arrow-right-arrow-left"></i> 1) Bilinenler / Bilinmeyenler</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Bilinmeyenler eşitliğin bir tarafına, bilinen sayılar diğer tarafına toplanır. Bir terim karşıya geçerken <strong>işareti değişir</strong> (<code>+</code> ise <code>-</code>, <code>-</code> ise <code>+</code> olur).
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #a855f7; margin-bottom: 8px;"><i class="fa-solid fa-percent"></i> 2) Rasyonel Denklemler (Payda Eşitleme)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Paydasında sayı olan denklemlerde tüm terimlerin paydaları eşitlenir ve ardından paydalar atılarak işlem paylar üzerinden yürütülür.
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-calculator"></i> Örnek Çözüm: <code>(x - 2) / 3 + x / 2 = 4</code></h4>
+                <p style="font-size: 0.9rem; line-height: 1.8; color: #cbd5e1;">
+                    1. Paydaları 6'da eşitleyelim: <code>2·(x - 2)/6 + 3·x/6 = 24/6</code><br>
+                    2. Paydaları atalım: <code>2x - 4 + 3x = 24</code><br>
+                    3. Bilinmeyenleri toplayalım: <code>5x - 4 = 24</code><br>
+                    4. -4 karşıya geçer: <code>5x = 28</code> ➔ <strong style="color: #22c55e;">x = 28 / 5 = 5,6</strong>
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: KOORDİNAT SİSTEMİ VE DOĞRU GRAFİKLERİ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Koordinat Sistemi ve 3 Farklı Doğru Grafiği
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                İki sayı doğrusunun 0 (orijin) noktasında dik kesişmesiyle <strong>koordinat sistemi</strong> oluşur. Yatay eksen <strong>x (apsis)</strong>, dikey eksen <strong>y (ordinat)</strong> adını alır. Noktalar <code>(x, y)</code> sıralı ikilisiyle gösterilir.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <!-- Eksenlere Paralel -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-arrows-left-right"></i> 1) Eksenlere Paralel Doğrular</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        • <code>x = a</code> doğrusu y eksenine paraleldir.<br>
+                        • <code>y = b</code> doğrusu x eksenine paraleldir.
+                    </p>
+                </div>
+
+                <!-- Orijinden Geçen -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #a855f7; margin-bottom: 8px;"><i class="fa-solid fa-location-crosshairs"></i> 2) Orijinden Geçen Doğrular</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        Sabit terimi olmayan <code>y = mx</code> veya <code>ax + by = 0</code> şeklindeki doğrulardır. Daima <code>(0,0)</code> yani orijinden geçerler.
+                    </p>
+                </div>
+
+                <!-- Eksenleri Kesen -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-chart-line"></i> 3) Eksenleri Kesen Doğrular</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        <code>ax + by + c = 0</code> şeklinde sabit terimi olan doğrulardır. Grafiği çizmek için önce <code>x=0</code> verip y bulunur, sonra <code>y=0</code> verip x bulunur.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: DOĞRUSAL İLİŞKİ VE BAĞIMLI-BAĞIMSIZ DEĞİŞKEN -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                3. Doğrusal İlişki (Bağımlı ve Bağımsız Değişken)
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                İki değişken arasındaki değişim oranı sabit ise bu iki değişken arasında <strong>doğrusal ilişki</strong> vardır.
+            </p>
+
+            <ul style="margin-left: 20px; font-size: 0.95rem; line-height: 1.9; color: #cbd5e1; margin-bottom: 1.5rem;">
+                <li><strong>Bağımsız Değişken (x):</strong> Değeri bizim tarafımızdan veya zamana bağlı olarak serbestçe belirlenen değişkendir.</li>
+                <li><strong>Bağımlı Değişken (y):</strong> Değeri bağımsız değişkene (x'e) göre değişen değişkendir.</li>
+            </ul>
+
+            <div style="background: rgba(34, 197, 94, 0.1); border-left: 4px solid #22c55e; padding: 15px; border-radius: 8px; color: #f8fafc;">
+                <h3 style="color: #22c55e; font-size: 1.1rem; margin-bottom: 8px;"><i class="fa-solid fa-bolt"></i> Denklem Kurma Taktiği</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Bir taksinin açılış ücreti 20 TL ve gidilen her km için 5 TL alınıyorsa:<br>
+                    • Gidilen yol = <code>x</code> (Bağımsız)<br>
+                    • Ödenecek ücret = <code>y</code> (Bağımlı)<br>
+                    <strong>Doğrusal Denklem: <code>y = 5x + 20</code></strong>
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 4: EĞİM (m) HESAPLAMA -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                4. Eğim ($m$) Hesaplama ve İşaret Kuralları
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Bir doğrunun dikey uzunluğunun yatay uzunluğuna oranına <strong>eğim</strong> denir ve <code>m</code> harfi ile gösterilir.
+            </p>
+
+            <div style="background: rgba(245, 158, 11, 0.1); border: 2px dashed #f59e0b; padding: 18px; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+                <h3 style="color: #f59e0b; font-size: 1.25rem; margin-bottom: 8px;"><i class="fa-solid fa-ruler-combined"></i> Temel Eğim Formülü</h3>
+                <p style="font-size: 1.1rem; font-weight: bold; color: #f8fafc; margin-top: 10px;">
+                    <code>Eğim (m) = (Dikey Uzunluk) / (Yatay Uzunluk)</code>
+                </p>
+            </div>
+
+            <h3 style="color: #f8fafc; font-size: 1.15rem; margin-bottom: 10px;">Grafikten ve Denklemden Eğim Bulma Taktikleri</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-compass"></i> Grafikten Eğim & İşaret</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        • Doğru <strong>SAĞA yatık</strong> ise eğim <strong>POZİTİF (+)</strong> 'tir.<br>
+                        • Doğru <strong>SOLA yatık</strong> ise eğim <strong>NEGATİF (-)</strong> 'tir.<br>
+                        • Yatay doğruların (<code>y=b</code>) eğimi <strong>0'dır</strong>.<br>
+                        • Dikey doğruların (<code>x=a</code>) eğimi <strong>TANIMSIZDIR</strong>.
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #a855f7; margin-bottom: 8px;"><i class="fa-solid fa-code"></i> Denklemden Eğim Bulma</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        <code>y</code> yalnız bırakıldığında <code>x</code>'in katsayısı direkt eğimi verir!<br>
+                        <code>y = mx + n</code> ➔ Eğim = <code>m</code><br>
+                        <em>Örnek: <code>3x - 2y + 6 = 0</code> denkleminde <code>y</code> yalnız bırakılırsa <code>y = (3/2)x + 3</code> olur. Eğim = <strong>3/2</strong> 'dir.</em>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 5: LGS YENİ NESİL ÖRNEK SORU ÇÖZÜMÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                5. LGS Tarzı Yeni Nesil Eğim & Depo Grafiği Soru Çözümü
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 20px; border-radius: 12px;">
+                <p style="font-weight: 600; font-size: 1rem; color: #f8fafc; margin-bottom: 12px;">
+                    <strong>Soru:</strong> Depo kapasitesi 80 litre olan bir aracın deposundaki benzin miktarının gidilen mesafeye göre değişimini gösteren doğrusal denklem <code>y = 80 - 0,08x</code> 'tir. Buna göre bu araç kaçıncı kilometrede deposundaki benzinin %75'ini tüketmiş olur?
+                </p>
+
+                <div style="background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; margin-top: 15px;">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-check-double"></i> Adım Adım Çözüm:</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7; color: #cbd5e1;">
+                        1. **Tüketilen Benzin Miktarını Bulalım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;80 litrenin %75'i = <code>80 · (75 / 100) = 60 litre</code> harcanmıştır.<br>
+                        2. **Depoda Kalan Benzin Miktarını (y) Bulalım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>Kalan (y) = 80 - 60 = 20 litre</code>.<br>
+                        3. **Denklemde y Yerine 20 Yazıp Yol Olan x'i Çekelim:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>20 = 80 - 0,08x</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>0,08x = 80 - 20 = 60</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>(8 / 100) · x = 60</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>8x = 6000</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #38bdf8;">Sonuç: <code>x = 750 km</code> 'dir.</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

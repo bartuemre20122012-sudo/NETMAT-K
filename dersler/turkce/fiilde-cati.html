@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiilde Çatı | 8. Sınıf LGS Türkçe - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Akıllı Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-book-open-reader"></i> 8. Sınıf Türkçe - Dil Bilgisi
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    Fiilde Çatı (Özne ve Nesnesine Göre)
+                </h1>
+            </div>
+            <!-- AKILLI GERİ DÖN BUTONU -->
+            <button onclick="if(document.referrer){ history.back(); } else { window.location.href='../../anasayfa.html'; }" class="nav-btn" style="background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Geri Dön
+            </button>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(168, 85, 247, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(168, 85, 247, 0.2); color: #a855f7; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Fiilde Çatı PDF Konu Özeti</h3>
+                        <p style="margin-bottom: 0;">LGS'de etken-edilgen ve geçişli-geçişsiz ayrımlarını karıştırmamak için ders notunu indir!</p>
+                    </div>
+                </div>
+                <a href="../../pdf-yok.html" target="_blank" style="background: #a855f7; color: #ffffff; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: İSİM CÜMLELERİNDE ÇATI ARANMAZ TUZAĞI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #f43f5e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Altın Kural: İsim Cümlelerinde Çatı Özelliği ARANMAZ!
+            </h2>
+            
+            <div style="background: rgba(244, 63, 94, 0.1); border-left: 4px solid #f43f5e; padding: 15px; border-radius: 8px; color: #f8fafc; margin-bottom: 1rem;">
+                <h3 style="color: #f43f5e; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-triangle-exclamation"></i> LGS'nin En Büyük Çatı Tuzağı!</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Çatı özelliği <strong>sadece ve sadece yüklemi FİİL (eylem) olan cümlelerde</strong> aranır. Yüklemi isim veya isim soylu kelime olan cümlelerde çatı özelliği <strong>ARANMAZ!</strong><br>
+                    • <em>"Dün hava çok <strong>güzeldi</strong>."</em> ➔ Yüklem isimdir, bu cümlede çatı özelliği aranmaz! ❌<br>
+                    • <em>"En büyük hedefi LGS'yi <strong>kazanmaktır</strong>."</em> ➔ Yüklem fiilimsidir (isimleşmiştir), çatı aranmaz! ❌
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: ÖZNESİNE GÖRE FİİL ÇATILARI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Öznelerine Göre Fiil Çatıları (Etken - Edilgen)
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                
+                <!-- Etken Fiil -->
+                <div style="background: rgba(255,255,255,0.03); padding: 18px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); border-left: 4px solid #38bdf8;">
+                    <h3 style="color: #38bdf8; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-user-check"></i> 1) Etken Fiil</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                        Eylemi yapan <strong>gerçek veya gizli öznenin belli olduğu</strong> fiillerdir. Cümlede "İşi kim yaptı?" sorusunun net bir cevabı vardır.<br>
+                        <em>Örnek 1: Bartu tüm soruları doğru <strong>çözdü</strong>. (Çözen kim? ➔ Bartu / Gerçek Özne ✅)</em><br>
+                        <em>Örnek 2: Dün akşam erkenden <strong>uyudum</strong>. (Uyuyan kim? ➔ Ben / Gizli Özne ✅)</em>
+                    </p>
+                </div>
+
+                <!-- Edilgen Fiil -->
+                <div style="background: rgba(255,255,255,0.03); padding: 18px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); border-left: 4px solid #a855f7;">
+                    <h3 style="color: #a855f7; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-user-xmark"></i> 2) Edilgen Fiil</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                        Eylemi gerçekleştiren <strong>gerçek öznenin BİLİNMEDİĞİ</strong> fiillerdir. Fiile mutlaka <code>-l</code> veya <code>-n</code> çatı ekleri getirilir. İşi yapan değil, işten etkilenen nesne <strong>Sözde Özne</strong> olur.<br>
+                        <em>Örnek: Sınıfın tahtası silin<strong>d</strong>i. (Tahtayı silen kim? ➔ Belli değil! Sözde Özne: Tahta).</em>
+                    </p>
+                </div>
+
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: NESNESİNE GÖRE FİİL ÇATILARI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                3. Nesnelerine Göre Fiil Çatıları (Geçişli - Geçişsiz)
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                
+                <!-- Geçişli Fiil -->
+                <div style="background: rgba(255,255,255,0.03); padding: 18px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); border-left: 4px solid #22c55e;">
+                    <h3 style="color: #22c55e; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-circle-check"></i> 1) Geçişli Fiil</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                        Nesne alabilen fiillerdir. Yükleme sorulan "Ne, Neyi, Kimi?" sorularına cevap verirler.<br>
+                        <em>Örnek: Kütüphaneden yeni bir kitap <strong>aldım</strong>. (Neyi aldım? ➔ Kitap / Nesne var ✅)</em>
+                    </p>
+                </div>
+
+                <!-- Geçişsiz Fiil -->
+                <div style="background: rgba(255,255,255,0.03); padding: 18px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1)); border-left: 4px solid #f43f5e;">
+                    <h3 style="color: #f43f5e; font-size: 1.2rem; margin-bottom: 8px;"><i class="fa-solid fa-circle-xmark"></i> 2) Geçişsiz Fiil</h3>
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                        Nesne alamayan fiillerdir. "Ne, Neyi, Kimi?" sorularına asla cevap veremezler.<br>
+                        <em>Örnek: Bebek beşikte mışıl mışıl <strong>uyudu</strong>. (Neyi uyudu? ➔ Cevap yok ❌)</em>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Süper Pratik "ONU" Taktiği -->
+            <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 15px; border-radius: 8px; color: #f8fafc;">
+                <h3 style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 8px;"><i class="fa-solid fa-bolt"></i> LGS Süper Taktik: "ONU" Testi</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Fiilin başına <strong>"ONU"</strong> kelimesini getir! Cümlede nesne yazmasa bile eylemin başına "Onu" getirdiğinde anlamlı oluyorsa fiil <strong>Geçişlidir</strong>, anlamsız oluyorsa <strong>Geçişsizdir</strong>!<br>
+                    • <em>"... (Onu) okudum."</em> ➔ Anlamlı oldu ➔ <strong>GEÇİŞLİ ✅</strong><br>
+                    • <em>"... (Onu) güldüm."</em> ➔ Anlamsız oldu ➔ <strong>GEÇİŞSİZ ❌</strong>
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 4: LGS YENİ NESİL ÖRNEK SORU ÇÖZÜMÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                4. LGS Tarzı Çatı Analizi Soru Çözümü
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 20px; border-radius: 12px;">
+                <p style="font-weight: 600; font-size: 1rem; color: #f8fafc; margin-bottom: 12px;">
+                    <strong>Soru:</strong> Aşağıdaki cümlelerin hangisinin yüklemi çatı bakımından <strong>"etken - geçişli"</strong> bir fiildir?<br><br>
+                    A) Okulun bahçesi hafta sonu güzelce temizlendi.<br>
+                    B) Yorgun olduğu için koltukta hemen uyuyakaldı.<br>
+                    C) Mimar, yeni projenin çizimlerini dün akşam tamamladı.<br>
+                    D) Yol kenarındaki ağaçlar sonbaharda sarardı.
+                </p>
+
+                <div style="background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; margin-top: 15px;">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-check-double"></i> Adım Adım Çözüm:</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7; color: #cbd5e1;">
+                        • A seçeneği: Temizleyen kim? Belli değil (Edilgen ❌)<br>
+                        • B seçeneği: "Onu uyuyakaldı" ➔ Anlamsız (Geçişsiz ❌)<br>
+                        • C seçeneği: Tamamlayan kim? ➔ Mimar (Etken ✅). Neyi tamamladı? ➔ Çizimleri (Geçişli ✅).<br>
+                        • D seçeneği: "Onu sarardı" ➔ Anlamsız (Geçişsiz ❌)<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #38bdf8;">Cevap C seçeneğidir (Etken - Geçişli).</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dönüşüm Geometrisi | 8. Sınıf LGS Matematik - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="index.html"><i class="fa-solid fa-list-check"></i> Matematik Konuları</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-square-root-variable"></i> 8. Sınıf Matematik - 6. Ünite
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    Dönüşüm Geometrisi (Öteleme & Yansıma)
+                </h1>
+            </div>
+            <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Konu Listesine Dön
+            </a>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Dönüşüm Geometrisi PDF Konu Özet</h3>
+                        <p style="margin-bottom: 0;">LGS'de koordinat değiştirme kuralları ve simetri taktikleri tek dosyada!</p>
+                    </div>
+                </div>
+                <a href="../../ozetler/matematik/donusum-geometrisi.pdf" target="_blank" style="background: #38bdf8; color: #0f172a; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: ÖTELEME HAREKETİ VE KOORDİNAT DEĞİŞİMİ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Öteleme Hareketi ve Koordinat Kuralları
+            </h2>
+            
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Bir şeklin duruşu, yönü, boyutu ve biçimi <strong>hiç değişmeden</strong> belirli bir doğrultuda yönlü olarak yer değiştirmesine <strong>öteleme</strong> denir.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <!-- Yatay Öteleme -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-arrows-left-right"></i> Yatay Öteleme (x Ekseni)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7;">
+                        • <strong>SAĞA Öteleme (a birim):</strong> Apsis artar ➔ <code>(x + a, y)</code><br>
+                        • <strong>SOLA Öteleme (a birim):</strong> Apsis azalır ➔ <code>(x - a, y)</code><br>
+                        <em>Ordinat (y) kesinlikle değişmez!</em>
+                    </p>
+                </div>
+
+                <!-- Dikey Öteleme -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #a855f7; margin-bottom: 8px;"><i class="fa-solid fa-arrows-up-down"></i> Dikey Öteleme (y Ekseni)</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7;">
+                        • <strong>YUKARI Öteleme (b birim):</strong> Ordinat artar ➔ <code>(x, y + b)</code><br>
+                        • <strong>AŞAĞI Öteleme (b birim):</strong> Ordinat azalır ➔ <code>(x, y - b)</code><br>
+                        <em>Apsis (x) kesinlikle değişmez!</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Altın Kural Kutusu -->
+            <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 15px; border-radius: 8px; color: #f8fafc;">
+                <h3 style="color: #f59e0b; font-size: 1.1rem; margin-bottom: 8px;"><i class="fa-solid fa-bolt"></i> LGS Öteleme Kuralı: Şeklin Alanı ve Kenarları Değişmez!</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Öteleme hareketi sonucunda elde edilen görüntü ilk şekil ile <strong>birebir eşdir (k = 1)</strong>. Kenar uzunlukları, açılar ve şeklin kapladığı alan kesinlikle değişmez.
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: YANSIMA (SİMETRİ) HAREKETİ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Yansıma Hareketi (Ayna Simetrisi)
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Bir doğruya göre katlandığında çakışacak şekilde görüntüsünün alınmasına <strong>yansıma</strong> (simetri) denir. Yansımada şeklin yönü **Ayna Görüntüsü** şeklinde ters döner.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <!-- x Eksenine Göre Yansıma -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-arrows-up-to-line"></i> x Eksenine Göre Yansıma</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.8; color: #cbd5e1;">
+                        x aynası kullanıldığında <strong>x sabit kalır, y'nin işareti değişir!</strong><br>
+                        <strong style="color: #38bdf8;"><code>A(x, y) ➔ A'(x, -y)</code></strong><br>
+                        <em>Örnek: <code>(3, -5)</code> noktasının x eksenine göre yansıması <code>(3, 5)</code> 'tir.</em>
+                    </p>
+                </div>
+
+                <!-- y Eksenine Göre Yansıma -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-arrows-left-right-to-line"></i> y Eksenine Göre Yansıma</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.8; color: #cbd5e1;">
+                        y aynası kullanıldığında <strong>y sabit kalır, x'in işareti değişir!</strong><br>
+                        <strong style="color: #22c55e;"><code>A(x, y) ➔ A'(-x, y)</code></strong><br>
+                        <em>Örnek: <code>(3, -5)</code> noktasının y eksenine göre yansıması <code>(-3, -5)</code> 'tir.</em>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: ÖTELEMELİ YANSIMA -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                3. Ötelemeli Yansıma Hareketi
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Bir şeklin önce öteleme ardından yansıma veya önce yansıma ardından öteleme hareketinin birlikte uygulanmasına <strong>ötelemeli yansıma</strong> denir.
+            </p>
+
+            <div style="background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 18px; border-radius: 12px;">
+                <h3 style="color: #22c55e; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-circle-nodes"></i> Sıralama Değişse De Sonuç Değişmez!</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Ötelemeli yansılamada işlemlerin sırası sonucu değiştirmez! Önce öteleyip sonra yansıtmak ile önce yansıtıp sonra ötelemek <strong>tamamen aynı son noktaya ulaştırır.</strong>
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 4: LGS YENİ NESİL ÖRNEK SORU ÇÖZÜMÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                4. LGS Tarzı Yeni Nesil Köşe Koordinatları Soru Çözümü
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 20px; border-radius: 12px;">
+                <p style="font-weight: 600; font-size: 1rem; color: #f8fafc; margin-bottom: 12px;">
+                    <strong>Soru:</strong> Köşe koordinatları <code>A(-2, 4)</code>, <code>B(-5, 1)</code> ve <code>C(-2, 1)</code> olan bir dik üçgen önce 4 birim sağa öteleniyor, ardından oluşan görüntünün x eksenine göre yansıması alınıyor. Oluşan yeni $A''$ köşesinin koordinatlarını bulunuz.
+                </p>
+
+                <div style="background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; margin-top: 15px;">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-check-double"></i> Adım Adım Çözüm:</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7; color: #cbd5e1;">
+                        1. **1. Adım: A(-2, 4) Noktasını 4 Birim Sağa Öteleyelim ($A'$):**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Sağa ötelemede apsise (x) 4 ekleriz, ordinat (y) aynı kalır.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>A' = (-2 + 4, 4) = (2, 4)</code>.<br>
+                        2. **2. Adım: A'(2, 4) Noktasının x Eksenine Göre Yansımasını Alalım ($A''$):**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;x eksenine göre yansımada x aynı kalır, y'nin işareti tersine döner.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>A'' = (2, -4)</code>.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #38bdf8;">Sonuç: Yeni görüntünün A'' köşesi <code>(2, -4)</code> noktası olur.</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

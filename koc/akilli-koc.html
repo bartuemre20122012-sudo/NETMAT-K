@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otomatik Soru & Konu Analizcisi | NetMatik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="assets/Gemini_Generated_Image_-Photoroom.png">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .search-box-card {
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            margin-bottom: 25px;
+        }
+
+        .search-input-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 280px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: #f8fafc;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: #0f172a;
+            font-weight: 800;
+            padding: 14px 24px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.98rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+        }
+
+        /* MODERN YANIT KARTI STİLLERİ */
+        .cevap-kart {
+            display: none;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            padding: 28px;
+            margin-top: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cevap-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .status-badge {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .kat-badge {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .taktik-box {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-left: 5px solid #38bdf8;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 14px 0;
+            color: #f1f5f9;
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .ornek-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-top: 12px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .ornek-box code {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <a href="../İndex.html">
+                <img src="../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" style="height: 48px;">
+            </a>
+        </div>
+        <nav class="nav-links">
+           <nav>
+  <nav>
+  <a href="../İndex.html"><i class="fas fa-home"></i> Ana Sayfa</a>
+  <a href="../İndex.html"><i class="fas fa-calculator"></i> LGS Net Hesapla</a>
+</nav>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 850px; margin-top: 2rem;">
+        
+        <div style="margin-bottom: 2rem;">
+            <span style="color: #38bdf8; font-weight: 800; font-size: 0.88rem; text-transform: uppercase;">
+                <i class="fa-solid fa-magnifying-glass-chart"></i> Otomatik Soru & Konu Arama Motoru
+            </span>
+            <h1 style="font-size: 2.2rem; font-weight: 800; color: #f8fafc; margin-top: 4px;">
+                Takıldığın Soruyu Sor, Anında Cevabını Al!
+            </h1>
+            <p style="color: #94a3b8; font-size: 1rem; margin-top: 6px;">
+                LGS Müfredatındaki kuralları, soru çözümlerini veya formülleri yazın; sistem en doğru cevabı anında getirsin.
+            </p>
+        </div>
+
+        <!-- ARAMA KUTUSU -->
+        <div class="search-box-card">
+            <label for="soruInput" style="color: #f8fafc; font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-circle-question" style="color: #38bdf8;"></i> Ne Öğrenmek İstiyorsunuz?
+            </label>
+            <div class="search-input-group">
+                <input type="text" id="soruInput" class="search-input" placeholder="Örn: Eşitsizliklerde negatif sayı kuralı nedir? / Fiilimsi nasıl bulunur?">
+                <button type="button" onclick="soruyuAnalizEt()" class="search-btn">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Analiz Et & Bul
+                </button>
+            </div>
+            
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+                <span style="color: #94a3b8; font-size: 0.82rem; font-weight: 600;">Hızlı Sorular:</span>
+                <button type="button" onclick="ornekSoruSor('Eşitsizlik yön değiştirme')" style="background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; cursor: pointer;">Eşitsizlik Kuralları</button>
+                <button type="button" onclick="ornekSoruSor('Fiilimsiler')" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; border: 1px solid rgba(236, 72, 153, 0.3); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; cursor: pointer;">Fiilimsi Kodlaması</button>
+                <button type="button" onclick="ornekSoruSor('EBOB EKOK mantığı')" style="background: rgba(34, 197, 94, 0.1); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; cursor: pointer;">EBOB / EKOK Ayrımları</button>
+            </div>
+        </div>
+
+        <!-- MODERN DİNAMİK CEVAP EKRANI -->
+        <div id="cevapKutusu" class="cevap-kart">
+            <div class="cevap-header">
+                <span class="status-badge">
+                    <i class="fa-solid fa-circle-check"></i> Doğrulanmış LGS Yanıtı
+                </span>
+                <span id="cevapKategori" class="kat-badge">Matematik</span>
+            </div>
+
+            <h2 id="cevapBaslik" style="color: #f8fafc; margin: 0 0 12px 0; font-size: 1.4rem; font-weight: 800;">
+                <!-- Başlık -->
+            </h2>
+
+            <div id="cevapIcerik">
+                <!-- Bölümlenmiş modern içerik buraya gelecek -->
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const cevapHavuzu = [
+            {
+                anahtarlar: ["merhaba", "selam", "selamunaleykum", "sa", "hey", "gunaydin", "iyi gunler"],
+                kategori: "Genel",
+                baslik: "Merhaba! Sınav Maratonunda Yanınızdayım",
+                kural: "NetMatik Akıllı LGS Rehberine Hoş Geldiniz!",
+                detay: "Sınav hazırlık sürecinizde takıldığınız konuları sormak, ders kurallarını öğrenmek veya pratik tüyolar almak için buradayım.",
+                ornek: "Arama kutusuna merak ettiğiniz konuyu yazarak doğrudan bilgiye ulaşabilirsiniz."
+            },
+            {
+                anahtarlar: ["nasılsın", "nasilsin", "neler yapıyorsun", "nasıl gidiyor"],
+                kategori: "Genel",
+                baslik: "Çalışmalar Tüm Hızıyla Devam Ediyor!",
+                kural: "Hedefe Adım Adım İlerliyoruz",
+                detay: "Sınav maratonunda size rehberlik etmek için hazır bekliyorum. Planlı ve disiplinli çalışma hedeflerinize ulaşmanın en kesin yoludur.",
+                ornek: "Bugün eksik olduğunuz bir dersin konu özetini inceleyerek başlayabilirsiniz."
+            },
+            {
+                anahtarlar: ["eşitsizlik", "esitsizlik", "negatif", "yön değiştirm", "yon degistirm"],
+                kategori: "Matematik",
+                baslik: "Eşitsizliklerde Negatif Sayı Kuralları",
+                kural: "🔥 LGS Altın Kuralı: Bir eşitsizliğin her iki tarafı negatif (-) bir sayı ile çarpılırsa veya bölünürse eşitsizlik sembolü YÖN DEĞİŞTİRİR!",
+                detay: "• &lt; sembolü &gt; haline gelir.<br>• &le; sembolü &ge; haline gelir.",
+                ornek: "<code>-2x &lt; 6</code> denkleminde her iki tarafı <code>-2</code>'ye böldüğümüzde yanıt <code>x &gt; -3</code> olur."
+            },
+            {
+                anahtarlar: ["fiilimsi", "isim fiil", "sıfat fiil", "zarf fiil", "eylemsi"],
+                kategori: "Türkçe",
+                baslik: "Fiilimsiler ve Pratik Kodlama Taktikleri",
+                kural: "Fiilimsiler fiil kök veya gövdelerine getirilen özel eklerle yapılır ve yüklem haricindeki sözcüklerde aranır.",
+                detay: "• <strong>İsim-Fiil Ekleri:</strong> -ma, -ış, -mak (Kodlama: <strong>MAYAŞMAK</strong>)<br>• <strong>Sıfat-Fiil Ekleri:</strong> -an, -ası, -mez, -ar, -dik, -ecek, -miş (Kodlama: <strong>ANASI MEZAR DİKECEKMİŞ</strong>)<br>• <strong>Zarf-Fiil Ekleri:</strong> -ken, -alı, -madan, -ince, -ip, -arak (Kodlama: <strong>KENYALI ASİYE MADAN...</strong>)",
+                ornek: "<code>Koşarak</code> gelen çocuk <code>okumayı</code> çok seviyor."
+            },
+            {
+                anahtarlar: ["ebob", "ekok", "en büyük ortak bölen", "en küçük ortak kat"],
+                kategori: "Matematik",
+                baslik: "EBOB ve EKOK Problemlerini Ayırt Etme Yöntemi",
+                kural: "Problemin parçalama mı yoksa birleştirme mi olduğuna dikkat edin.",
+                detay: "• <strong>EBOB Kullanılır:</strong> Büyük parçalar küçük parçalara ayrılıyorsa (Tarla etrafına direk dikme, çuvallardaki ürünleri poşetleme).<br>• <strong>EKOK Kullanılır:</strong> Küçük parçalar bir araya gelip büyük bir bütünü oluşturuyorsa (Zillerin ortak çalması, sefer saatleri).",
+                ornek: "Bidonlardaki yağların şişelere bölünmesi = <code>EBOB</code> | Otobüslerin saat başı buluşması = <code>EKOK</code>"
+            },
+            {
+                anahtarlar: ["kader", "kaza", "irade", "din"],
+                kategori: "Din Kültürü",
+                baslik: "Kader ve Kaza İnancı Temel Kavramları",
+                kural: "Kader planlama, kaza ise o planın gerçekleşmesidir.",
+                detay: "• <strong>Kader:</strong> Allah'ın evrendeki her şeyi önceden bilip takdir etmesi.<br>• <strong>Kaza:</strong> Zamanı gelince o olayın gerçekleşmesi.<br>• <strong>Küllî İrade:</strong> Allah'ın sınırsız iradesi.<br>• <strong>Cüz'î İrade:</strong> İnsanın seçim yapma özgürlüğü.",
+                ornek: "Yer çekimi kanunu <code>Kader</code>dir, bir elmanın yere düşmesi ise <code>Kaza</code>dır."
+            }
+        ];
+
+        function soruyuAnalizEt() {
+            const input = document.getElementById('soruInput').value.toLowerCase().trim();
+            const cevapKutusu = document.getElementById('cevapKutusu');
+            const cevapBaslik = document.getElementById('cevapBaslik');
+            const cevapIcerik = document.getElementById('cevapIcerik');
+            const cevapKategori = document.getElementById('cevapKategori');
+
+            if (!input) {
+                alert("Lütfen merak ettiğiniz konuyu veya soruyu yazın.");
+                return;
+            }
+
+            let eslesenCevap = cevapHavuzu.find(item => 
+                item.anahtarlar.some(anahtar => input.includes(anahtar))
+            );
+
+            cevapKutusu.style.display = 'block';
+
+            if (eslesenCevap) {
+                cevapKategori.innerText = eslesenCevap.kategori;
+                cevapBaslik.innerText = eslesenCevap.baslik;
+                
+                cevapIcerik.innerHTML = `
+                    <div class="taktik-box">
+                        ${eslesenCevap.kural}
+                    </div>
+                    <div style="color: #cbd5e1; font-size: 0.98rem; line-height: 1.7; margin: 12px 0;">
+                        ${eslesenCevap.detay}
+                    </div>
+                    <div class="ornek-box">
+                        <strong style="color: #38bdf8;"><i class="fa-solid fa-code"></i> ÖRNEK:</strong> ${eslesenCevap.ornek}
+                    </div>
+                `;
+            } else {
+                cevapKategori.innerText = "Genel Arama";
+                cevapBaslik.innerText = "Aradığınız Konu Analiz Ediliyor";
+                cevapIcerik.innerHTML = `
+                    <div class="taktik-box" style="border-left-color: #f59e0b;">
+                        Aradığınız kelimeyle ilgili özel özet henüz hazır yanıt havuzunda eşleşmedi.
+                    </div>
+                    <div class="ornek-box">
+                        <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> <strong>Öneri:</strong> Ana sayfadaki ilgili ders kartına tıklayarak tüm detaylı ünite notlarına ve PDF dosyalarına ulaşabilirsiniz.
+                    </div>
+                `;
+            }
+        }
+
+        function ornekSoruSor(metin) {
+            document.getElementById('soruInput').value = metin;
+            soruyuAnalizEt();
+        }
+    </script>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

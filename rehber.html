@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGS Şampiyonluk Rehberi & Taktikleri | NetMatik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+        }
+
+        .rehber-card {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 18px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: border-color 0.2s ease;
+        }
+
+        .rehber-card:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 12px;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .taktik-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .taktik-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .taktik-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #38bdf8;
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid #38bdf8;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.92rem;
+            color: #e2e8f0;
+        }
+
+        .ders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="İndex.html">
+                <img src="./assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" style="height: 48px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="koc/akilli-koc.html"><i class="fa-solid fa-robot"></i> Akıllı Koç</a>
+            <a href="koc/soru-sor.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Soru Analiz</a>
+            <a href="rehber.html" class="active"><i class="fa-solid fa-compass"></i> LGS Rehberi</a>
+            <a href="lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+            <a href="javascript:void(0)" onclick="openHakkimda()"><i class="fa-solid fa-user-graduate"></i> Hakkımda</a>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 1050px; margin-top: 2rem;">
+        
+        <!-- HERO BAŞLIK -->
+        <section style="text-align: center; margin-bottom: 2.5rem; padding: 2.2rem 1.2rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.85)); border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px;">
+                <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 5px 14px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-trophy"></i> Derece Öğrencilerinin Çalışma Taktikleri
+                </span>
+            </div>
+            <h1 style="font-size: 2.3rem; font-weight: 800; color: #f8fafc; margin: 10px 0;">
+                NetMatik LGS Şampiyonluk & Soru Çözüm Rehberi
+            </h1>
+            <p style="color: #94a3b8; font-size: 1.05rem; max-width: 750px; margin: 0 auto; line-height: 1.6;">
+                Yeni nesil soruları şak diye çözmek, zamandan kazanmak ve LGS'de hedeflere ulaşmak için hazırlanmış en donanımlı rehber!
+            </p>
+        </section>
+
+        <!-- 1. BÖLÜM: PARAGRAF VE KİTAP OKUMA STRATEJİLERİ -->
+        <div class="rehber-card">
+            <div class="card-header">
+                <div class="icon-box" style="background: rgba(236, 72, 153, 0.2); color: #ec4899;">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; color: #f8fafc; font-size: 1.4rem;">1. Paragraf Taktikleri & Kitap Okuma Etkisi</h2>
+                    <span style="color: #94a3b8; font-size: 0.85rem;">LGS'nin %60'ı Anlama ve Yorumlama Yeteneğidir</span>
+                </div>
+            </div>
+            
+            <ul class="taktik-list">
+                <li><strong>Önce Soru Kökünü Okuyun:</strong> Paragrafı okumaya geçmeden önce soru kökünü (metinden ne istendiğini) okuyun. Böylece zihniniz paragrafı okurken cevabı aramaya programlanır.</li>
+                <li><strong>Anahtar Kelimelerin Altını Çizin:</strong> Tüm paragrafın altını çizmeyin! Sadece isimler, tarihler, zıtlık bağlaçları (ancak, fakat, oysa) ve olumsuz eklerin altını çizin.</li>
+                <li><strong>Günde En Az 20 Paragraf Rutini:</strong> Saat kaç olursa olsun her gün aksatmadan 20 paragraf sorusu çözmeyi alışkanlık haline getirin. Bu, sözel ve sayısal tüm derslerde okuma hızınızı 2 katına çıkarır.</li>
+                <li><strong>Kitap Okumanın Sınava Doğrudan Katkısı:</strong> LGS Matematik ve Fen soruları artık uzun metinli senaryolardan oluşur. Düzenli kitap okuyan öğrenciler soruyu ilk okuyuşta anlarken, okumayanlar 2-3 defa okumak zorunda kalıp zaman kaybeder.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> <strong>Altın İpucu:</strong> Olumsuz soru köklerine ("çıkarılamaz", "değildir", "ulaşılamaz") ekstra dikkat edin. Kaleminizle olumsuz kelimenin etrafını daire içine alın.
+            </div>
+        </div>
+
+        <!-- 2. BÖLÜM: YENİ NESİL SORU ÇÖZME STRATEJİLERİ -->
+        <div class="rehber-card">
+            <div class="card-header">
+                <div class="icon-box" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; color: #f8fafc; font-size: 1.4rem;">2. Yeni Nesil Soru Çözme Taktikleri</h2>
+                    <span style="color: #94a3b8; font-size: 0.85rem;">Beceri Temelli Sorularda Hızlanma Teknikleri</span>
+                </div>
+            </div>
+
+            <ul class="taktik-list">
+                <li><strong>Görsel ve Tablo İnceleme:</strong> Soruda tablo, grafik veya şekil varsa metni okumadan önce görsele 5 saniye göz atıp ne anlatmak istediğini kavrayın.</li>
+                <li><strong>Sorudan Korkmayın (Uzun Soru = Kolay Soru):</strong> LGS'de en uzun görünen sorular genellikle en çok ipucu içeren ve çözümü en kolay olan sorulardır. Soru uzun diye pas geçmeyin.</li>
+                <li><strong>Turlama Taktiği Uygulayın:</strong> İlk okuyuşta mantığını kavrayamadığınız soruların yanına yıldız koyup hemen geçin. Sınavın sonuna kalan sürede bu sorulara dönün. Bir soruya asla 3 dakikadan fazla takılmayın!</li>
+                <li><strong>Şıklardan Gitme & Eleme Yöntemi:</strong> Sayısal ve sözelde çelişkili veya imkansız şıkları doğrudan eleyin. Şık sayısı 2'ye düştüğünde doğruya ulaşma şansınız %50'ye çıkar.</li>
+            </ul>
+        </div>
+
+        <!-- 3. BÖLÜM: DERS DERS İNCE İNCE ÇALIŞMA TAVSİYELERİ -->
+        <h2 style="color: #f8fafc; font-size: 1.6rem; font-weight: 800; margin: 2rem 0 1.2rem 0; display: flex; align-items: center; gap: 10px;">
+            <i class="fa-solid fa-layer-group" style="color: #38bdf8;"></i> Ders Ders İnce İnce İlerleme Taktikleri
+        </h2>
+
+        <div class="ders-grid">
+
+            <!-- MATEMATİK -->
+            <div class="rehber-card" style="border-top: 5px solid #38bdf8;">
+                <div class="card-header">
+                    <div class="icon-box" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin: 0; color: #f8fafc; font-size: 1.2rem;">Matematik Taktikleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Sayısal Bölümün Anahtarı</span>
+                    </div>
+                </div>
+                <ul class="taktik-list">
+                    <li><strong>Kazanım Olmadan Yeni Nesil Olmaz:</strong> Önce konunun temel formül ve kurallarını kavrayın, ardından doğrudan kazanım soruları çözün. Tam pekişmeden yeni nesile geçmeyin.</li>
+                    <li><strong>Modelleme Yapın:</strong> Soruyu okurken verileri kağıda dökün. Denklem kurma, şekil çizme veya tablo oluşturma çözümü %50 kolaylaştırır.</li>
+                    <li><strong>EBOB-EKOK / Üslü / Karekök Rutini:</strong> LGS Matematiğin temeli bu konulardır. Her hafta mutlaka bu konulardan karma test çözün.</li>
+                    <li><strong>Hata Defteri Tutun:</strong> Yapamadığınız veya boş bıraktığınız Matematik sorularını kesip bir deftere yapıştırın ve çözümlerini öğrenin.</li>
+                </ul>
+            </div>
+
+            <!-- TÜRKÇE -->
+            <div class="rehber-card" style="border-top: 5px solid #ec4899;">
+                <div class="card-header">
+                    <div class="icon-box" style="background: rgba(236, 72, 153, 0.2); color: #ec4899;">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin: 0; color: #f8fafc; font-size: 1.2rem;">Türkçe Taktikleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Sözel Bölümün Lideri</span>
+                    </div>
+                </div>
+                <ul class="taktik-list">
+                    <li><strong>Sözel Mantık Bulmacası:</strong> Sözel mantık sorularında verilen bilgileri kafanızda tutmaya çalışmayın! Mutlaka küçük bir tablo çizin.</li>
+                    <li><strong>Fiilimsileri Kodlayın:</strong> İsim-fiil (Ma-yış-mak), Sıfat-fiil (An-as-ı-mez-ar-dık-e-cek-miş) eklerini adınız gibi bilin. Yüklemleri eleyerek fiilimsi arayın.</li>
+                    <li><strong>Paragrafta Kendi Yorumunuzu Katmayın:</strong> Metinde ne yazıyorsa sadece ona bağlı kalın. "Bence" diyerek soru çözmeyin.</li>
+                </ul>
+            </div>
+
+            <!-- FEN BİLİMLERİ -->
+            <div class="rehber-card" style="border-top: 5px solid #22c55e;">
+                <div class="card-header">
+                    <div class="icon-box" style="background: rgba(34, 197, 94, 0.2); color: #22c55e;">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.2rem;">Fen Bilimleri Taktikleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Deney ve Grafik Odaklı</span>
+                    </div>
+                </div>
+                <ul class="taktik-list">
+                    <li><strong>Değişken Mantığını Çözün:</strong> Deney sorularında <em>Bağımsız Değişken</em> (Bizim değiştirdiğimiz), <em>Bağımlı Değişken</em> (Etkilenen durum) ve <em>Sabit Tutulan Değişken</em>i anında tespit edin.</li>
+                    <li><strong>DNA ve Genetik Kod:</strong> Çaprazlama sorularında Olasılık hesaplarını (AA, Aa, aa) eksiksiz yazarak işlem yapın.</li>
+                    <li><strong>Görsel Analizi:</strong> Fizik ve Basit Makine sorularında kuvvet kolu ve yük kolu uzunluklarını şekil üzerinde işaretleyin.</li>
+                </ul>
+            </div>
+
+            <!-- İNKILAP TARİHİ -->
+            <div class="rehber-card" style="border-top: 5px solid #f59e0b;">
+                <div class="card-header">
+                    <div class="icon-box" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b;">
+                        <i class="fa-solid fa-landmark"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.2rem;">İnkılap Tarihi Taktikleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Kavram & Harita Yorumlama</span>
+                    </div>
+                </div>
+                <ul class="taktik-list">
+                    <li><strong>Kavram Farklarını Bilin:</strong> <em>Milli Egemenlik</em> (Halkın yönetime katılması, Meclis, Seçim) ile <em>Milli Bağımsızlık</em> (Düşmandan kurtulmak, Vatanın bütünlüğü) kavramlarını asla karıştırmayın!</li>
+                    <li><strong>Harita Soruları:</strong> Harita sorularında haritada verilmeyen hiçbir bilgiyi doğru kabul etmeyin. Sadece haritadaki sembol ve lejantı okuyun.</li>
+                    <li><strong>Neden-Sonuç İlişkisi:</strong> Antlaşmaların maddelerini ezberlemek yerine "Bu madde neyi amaçlıyor?" sorusunu sorun.</li>
+                </ul>
+            </div>
+
+            <!-- İNGİLİZCE -->
+            <div class="rehber-card" style="border-top: 5px solid #a855f7;">
+                <div class="card-header">
+                    <div class="icon-box" style="background: rgba(168, 85, 247, 0.2); color: #a855f7;">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.2rem;">İngilizce Taktikleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Kelime & Diyalog Odaklı</span>
+                    </div>
+                </div>
+                <ul class="taktik-list">
+                    <li><strong>Ünite Kelime Defteri:</strong> Her ünitenin en çok çıkan 30 kelimesini (Accept, Refuse, Invite, Eager, Buddy vb.) minik kartlara yazıp her gün tekrar edin.</li>
+                    <li><strong>Diyalog Tamamlama:</strong> Soru işaretinden önceki ve sonraki cümleye odaklanın. Kabul etme (Accept) mi yoksa Mazeret bildirerek reddetme (Refuse with excuse) mi yapıldığını belirleyin.</li>
+                </ul>
+            </div>
+
+            <!-- DİN KÜLTÜRÜ -->
+            <div class="rehber-card" style="border-top: 5px solid #ef4444;">
+                <div class="card-header">
+                    <div class="icon-box" style="background: rgba(239, 68, 68, 0.2); color: #ef4444;">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+                    <div>
+                        <h3 style="color: #f8fafc; margin: 0; font-size: 1.2rem;">Din Kültürü Taktikleri</h3>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">Ayet & Hadis Yorumlama</span>
+                    </div>
+                </div>
+                <ul class="taktik-list">
+                    <li><strong>Ayet ve Hadis Analizi:</strong> Sorudaki ayet veya hadisin hangi konuya (Örn: Emek ve Rızık, Tevekkül, Zekatın Faydaları) vurgu yaptığını tespit edin.</li>
+                    <li><strong>Kavram Bilgisi:</strong> Sadaka-i Cariye, Nisap Miktarı, Cüz'i İrade, Küllî İrade terimlerinin tanımlarını öğrenin.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 4. BÖLÜM: DENEME ANALİZİ & HATA DEFTERİ -->
+        <div class="rehber-card" style="margin-top: 1rem; border: 1px solid rgba(34, 197, 94, 0.4); border-left: 6px solid #22c55e;">
+            <div class="card-header">
+                <div class="icon-box" style="background: rgba(34, 197, 94, 0.2); color: #22c55e;">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; color: #f8fafc; font-size: 1.4rem;">4. Şampiyon Yapacak Deneme Analiz Rutini</h2>
+                    <span style="color: #94a3b8; font-size: 0.85rem;">Seni Hedefine Ulaştıracak Asıl Güç Yanlışlarından Ders Çıkarmaktır</span>
+                </div>
+            </div>
+
+            <p style="color: #cbd5e1; font-size: 0.98rem; line-height: 1.7; margin-bottom: 12px;">
+                Deneme sınavı bittikten sonra kitapçığı bir kenara atmayın! Denemeden hemen sonra şu 3 adımı uygulayın:
+            </p>
+            <ol style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.8; padding-left: 20px; margin: 0;">
+                <li><strong>Yanlış Sebebini Belirleyin:</strong> Soru bilgi eksikliğinden mi, dikkatsizlikten mi yoksa süre yetiştirememekten mi yanlış yapıldı?</li>
+                <li><strong>Öğretmene/Soru Çözümüne Başvurun:</strong> Yapamadığınız her sorunun çözümünü mutlaka o gün içinde öğrenin.</li>
+                <li><strong>Hata Defterine Ekleyin:</strong> Yapamadığınız soruları NetMatik'teki Akıllı Koç veya Soru Analiz motoruna kaydedip haftalık tekrar yapın.</li>
+            </ol>
+        </div>
+
+    </main>
+
+    <!-- HAKKIMDA POPUP -->
+    <div id="hakkimdaModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center; padding: 1rem;">
+        <div style="max-width: 500px; width: 100%; background: #1e293b; border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 20px; padding: 2rem; position: relative;">
+            <button onclick="closeHakkimda()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; color: #f8fafc; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.1rem;"><i class="fa-solid fa-xmark"></i></button>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem;">
+                <div style="width: 48px; height: 48px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"><i class="fa-solid fa-user-graduate"></i></div>
+                <div>
+                    <h2 style="color: #f8fafc; margin: 0; font-size: 1.4rem; font-weight: 800;">Hakkımızda & NetMatik</h2>
+                    <span style="color: #38bdf8; font-size: 0.85rem; font-weight: 600;">LGS Hazırlığında Ücretsiz Dijital Rehber</span>
+                </div>
+            </div>
+            <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.2rem;">
+                <strong>NetMatik</strong>, 8. sınıf LGS sınavına hazırlanan öğrencilerin ders eksiklerini gidermek, akıllı rehberlik desteği sunmak ve sınav konularına pratik yoldan ulaşmasını sağlamak için oluşturulmuş dijital platformdur.
+            </p>
+            <button onclick="closeHakkimda()" style="width: 100%; background: #38bdf8; color: #0f172a; font-weight: 800; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">Anladım, Kapat</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem; padding: 2rem 1rem; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(15, 23, 42, 0.95); text-align: center;">
+        <div style="display: flex; align-items: center; gap: 8px; color: #cbd5e1; font-size: 0.9rem;">
+            <i class="fa-solid fa-envelope" style="color: #38bdf8;"></i>
+            İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 700;">bartuemre20122012@gmail.com</a>
+        </div>
+        <div style="color: #94a3b8; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <img src="./assets/meblogo.png" alt="MEB Logo" style="height: 18px; width: auto;">
+            Milli Eğitim Bakanlığı (MEB) LGS Müfredatı ile Uyumlu Olarak Hazırlanmıştır.
+        </div>
+        <div style="color: #64748b; font-size: 0.8rem; margin-top: 2px;">&copy; 2026 NetMatik. Tüm hakları saklıdır.</div>
+    </footer>
+
+    <script>
+        function openHakkimda() { document.getElementById('hakkimdaModal').style.display = 'flex'; }
+        function closeHakkimda() { document.getElementById('hakkimdaModal').style.display = 'none'; }
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

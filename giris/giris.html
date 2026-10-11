@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap | NetMatik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Kimlik kartını bağladık -->
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0b1329">
+
+<!-- Arka plan bekçisini çalıştıran kod -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../sw.js');
+  }
+</script>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 1.5rem;
+        }
+
+        .auth-card {
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            border-radius: 24px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-header img {
+            height: 54px;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #cbd5e1;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #38bdf8;
+            font-size: 1rem;
+        }
+
+        .auth-input {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 12px;
+            padding: 12px 14px 12px 42px;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            outline: none;
+            box-sizing: border-box;
+            transition: all 0.25s ease;
+        }
+
+        .auth-input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
+        }
+
+        .captcha-box {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1.2rem 0;
+        }
+
+        .captcha-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f8fafc;
+            cursor: pointer;
+        }
+
+        .captcha-checkbox {
+            width: 20px;
+            height: 20px;
+            accent-color: #38bdf8;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
+            color: #0f172a;
+            font-weight: 800;
+            padding: 13px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+        }
+
+        .error-msg {
+            display: none;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #f87171;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.88rem;
+            color: #94a3b8;
+        }
+
+        .auth-footer a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-card">
+        <div class="auth-header">
+            <a href="../İndex.html">
+                <img src="../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo">
+            </a>
+            <h1 style="font-size: 1.6rem; font-weight: 800; color: #f8fafc; margin: 0;">NetMatik'e Giriş Yapın</h1>
+            <p style="color: #94a3b8; font-size: 0.88rem; margin-top: 5px;">Hesabınızla Oturum Açarak İlerleyin</p>
+        </div>
+
+        <div id="errorBox" class="error-msg"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-Posta Adresi</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" class="auth-input" placeholder="örnek@gmail.com" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" class="auth-input" placeholder="••••••••" required>
+                </div>
+            </div>
+
+            <!-- BEN ROBOT DEĞİLİM CAPTCHA KUTUSU -->
+            <div class="captcha-box">
+                <label class="captcha-label" for="robotCheck">
+                    <input type="checkbox" id="robotCheck" class="captcha-checkbox">
+                    <span>Ben robot değilim</span>
+                </label>
+                <i class="fa-solid fa-robot" style="font-size: 1.4rem; color: #38bdf8;"></i>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            Hesabınız yok mu? <a href="kayit.html">Hemen Kayıt Olun</a>
+            <div style="margin-top: 1rem;">
+                <a href="../İndex.html" style="color: #64748b; font-size: 0.82rem;"><i class="fa-solid fa-arrow-left"></i> Ana Sayfaya Dön</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorBox = document.getElementById('errorBox');
+            errorBox.style.display = 'none';
+
+            const email = document.getElementById('email').value.trim().toLowerCase();
+            const password = document.getElementById('password').value;
+            const isRobotChecked = document.getElementById('robotCheck').checked;
+
+            // 1. Robot Kontrolü
+            if (!isRobotChecked) {
+                errorBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Lütfen "Ben robot değilim" kutucuğunu işaretleyin.';
+                errorBox.style.display = 'block';
+                return;
+            }
+
+            // 2. Veri Tabanından Kullanıcı Kontrolü
+            let usersDb = JSON.parse(localStorage.getItem('netmatik_users_db') || '[]');
+            let matchedUser = usersDb.find(u => u.email === email && u.password === password);
+
+            if (!matchedUser) {
+                errorBox.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> <strong>Hatalı Giriş!</strong> E-posta veya şifre hatalı. Lütfen bilgilerinizi kontrol edin veya kayıt olun.';
+                errorBox.style.display = 'block';
+                return;
+            }
+
+            // 3. Başarılı Oturum
+            matchedUser.isLoggedIn = true;
+            localStorage.setItem('netmatik_user', JSON.stringify(matchedUser));
+
+            window.location.href = '../İndex.html';
+        });
+    </script>
+</body>
+</html>

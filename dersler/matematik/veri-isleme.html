@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veri Analizi & Grafikler | 8. Sınıf LGS Matematik - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="index.html"><i class="fa-solid fa-list-check"></i> Matematik Konuları</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-square-root-variable"></i> 8. Sınıf Matematik - 2. Ünite
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    Veri Analizi ve Grafik Dönüşümleri
+                </h1>
+            </div>
+            <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Konu Listesine Dön
+            </a>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Veri Analizi & Grafikler PDF Özet</h3>
+                        <p style="margin-bottom: 0;">LGS'de zaman kazandıran açı-miktar orantı taktikleri ve özet ders notu!</p>
+                    </div>
+                </div>
+                <a href="../../ozetler/matematik/veri-isleme.pdf" target="_blank" style="background: #38bdf8; color: #0f172a; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: GRAFİK TÜRLERİ VE KULLANIM ALANLARI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Grafik Türleri & Hangisi Nerede Kullanılır?
+            </h2>
+            
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                LGS sözel mantık ve grafik sorularında ilk soru şudur: <em>"Bu veriyi temsil etmek için en uygun grafik hangisidir?"</em>
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 1.5rem;">
+                <!-- Çizgi Grafiği -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-chart-line"></i> 1) Çizgi Grafiği</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        <strong>Anahtar Kelime:</strong> <em>Zaman içindeki değişim / Artış - Azalış</em><br>
+                        Sıcaklık değişimi, borsa/altın fiyatları, hastanın vücut ısısı gibi zamana bağlı sürekli verilerde tercih edilir.
+                    </p>
+                </div>
+
+                <!-- Sütun Grafiği -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #a855f7; margin-bottom: 8px;"><i class="fa-solid fa-chart-simple"></i> 2) Sütun Grafiği</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        <strong>Anahtar Kelime:</strong> <em>Miktar Karşılaştırma</em><br>
+                        Farklı sınıfların mevcudu, illere göre üretilen buğday miktarı gibi farklı kategorileri kıyaslamak için kullanılır.
+                    </p>
+                </div>
+
+                <!-- Daire Grafiği -->
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-chart-pie"></i> 3) Daire Grafiği</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        <strong>Anahtar Kelime:</strong> <em>Bir Bütünün Parçaları / Oran</em><br>
+                        Bir bütünü oluşturan parçaların dağılımını veya yüzdelik dilimlerini göstermek için en ideal grafiktir.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: DAİRE GRAFİĞİ HESAPLARI (360 DERECE ORANTI TAKTİĞİ) -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Daire Grafiği ve Merkez Açı Orantı Formülü
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Daire grafiğinin tamamı <strong>360°</strong> 'dir. Verilerin toplam miktarı 360° ile eşleştirilir ve doğru orantı kurulur.
+            </p>
+
+            <div style="background: rgba(168, 85, 247, 0.1); border: 2px dashed #a855f7; padding: 18px; border-radius: 12px; margin-bottom: 1.5rem;">
+                <h3 style="color: #a855f7; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-calculator"></i> Temel Orantı Kalıbı</h3>
+                <p style="font-size: 1rem; line-height: 1.8; color: #f8fafc;">
+                    <code>Tüm Verilerin Toplam Miktarı ➔ 360° ise</code><br>
+                    <code>İstenen Parça Miktarı ➔ x° (Merkez Açı)</code><br>
+                    <strong>Çapraz Çarpım:</strong> <code>x = (Parça Miktarı · 360°) / Toplam Miktar</code>
+                </p>
+            </div>
+
+            <!-- Süper Pratik Kat Taktik Kutusu -->
+            <div style="background: rgba(34, 197, 94, 0.1); border-left: 4px solid #22c55e; padding: 15px; border-radius: 8px; color: #f8fafc; margin-bottom: 1rem;">
+                <h3 style="color: #22c55e; font-size: 1.1rem; margin-bottom: 8px;"><i class="fa-solid fa-bolt"></i> LGS Süper Hızlı Taktik: En Sade Kat (k) Yöntemi</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Açıları verilen bir daire grafiğinde her bir açıyı <strong>EBOB'una bölerek en sade oranları (k cinsinden)</strong> ver! İşlemler 10 kat hızlanır.<br>
+                    <em>Örnek: Açıları 60°, 90°, 150°, 60° olan bir grafikte EBOB = 30° 'dir.</em><br>
+                    • 60° ➔ <code>2k</code> &nbsp;|&nbsp; • 90° ➔ <code>3k</code> &nbsp;|&nbsp; • 150° ➔ <code>5k</code><br>
+                    <strong>Toplam = 2k + 3k + 5k + 2k = 12k</strong>. Artık tüm soruları <code>k</code> üzerinden saniyeler içinde çözebilirsin!
+                </p>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: GRAFİK DÖNÜŞÜMLERİ (SÜTUNDAN DAİREYE / DÂİREDEN SÜTUNA) -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                3. Grafikler Arası Dönüşüm (Sütun ⇄ Daire)
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                LGS sınavında en sık sorulan soru tipi bir grafikteki veriyi başka bir grafik türüne aktarmaktır.
+            </p>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 15px; border-radius: 12px; margin-bottom: 1.5rem;">
+                <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-arrows-rotate"></i> Adım Adım Dönüşüm Rehberi</h4>
+                <ol style="margin-left: 20px; font-size: 0.95rem; line-height: 1.8; color: #cbd5e1;">
+                    <li>Sütun grafiğindeki tüm sayısal değerleri toplayıp <strong>Toplam Bütünü</strong> bul.</li>
+                    <li>Toplam Bütünü <strong>360°</strong> kabul et.</li>
+                    <li>Her bir kategorinin değerini <code>(Kategori Değeri / Toplam Bütün) · 360°</code> formülüyle merkez açısını hesapla.</li>
+                    <li>Eksik kalan son açıyı bulmak için bilinen açıları toplayıp <code>360°</code>'den çıkar.</li>
+                </ol>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 4: LGS YENİ NESİL ÖRNEK SORU ÇÖZÜMÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                4. LGS Tarzı Yeni Nesil Grafik Dönüşüm Soru Çözümü
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 20px; border-radius: 12px;">
+                <p style="font-weight: 600; font-size: 1rem; color: #f8fafc; margin-bottom: 12px;">
+                    <strong>Soru:</strong> Bir çiftlikteki hayvanların sayıca dağılımı daire grafiğinde gösterilmiştir. Çiftlikte Koyun (150°), Keçi (90°), İnek ve Tavuk bulunmaktadır. Tavuk sayısı keçi sayısının 2 katı olduğuna göre, inek sayısını gösteren daire diliminin merkez açısı kaç derecedir?
+                </p>
+
+                <div style="background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; margin-top: 15px;">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-check-double"></i> Adım Adım Çözüm:</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7; color: #cbd5e1;">
+                        1. **Verilen Açıları Yazalım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• Koyun Açı = <code>150°</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• Keçi Açı = <code>90°</code><br>
+                        2. **Tavuk Açı Hesabı:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Tavuk sayısı keçi sayısının 2 katı olduğuna göre, tavuğu temsil eden merkez açı da keçinin 2 katı olmalıdır.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;• Tavuk Açı = <code>90° · 2 = 180°</code><br>
+                        3. **Açıların Toplamını İnceleyelim:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>Koyun (150°) + Keçi (90°) + Tavuk (180°) = 420°</code> ➔ <strong style="color: #f43f5e;">Daire grafiği toplamı 360°'yi geçemez!</strong><br>
+                        4. **Hatalı Adım Düzeltmesi & Gerçek İnek Açısı:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Keçi = 90° ise Tavuk = 180° olsaydı sadece bu ikisi 270° yapardı. Koyun 150° eklendiğinde 420° olduğu için soru orantı katsayısı üzerinden kurulur.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Eğer keçi açısı 60° verilseydi Tavuk = 120°, Koyun = 150°, İnek = <code>360 - (60+120+150) = 30°</code> olurdu.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #38bdf8;">Mantık Kuralı: Açı oranları miktar oranlarıyla birebir aynıdır. Toplam daima 360° tamamlanır.</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>

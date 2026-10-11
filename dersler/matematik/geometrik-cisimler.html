@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometrik Cisimler | 8. Sınıf LGS Matematik - NetMatik</title>
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ana CSS Dosyamız -->
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+    <!-- Üst Header / Navigasyon Barı -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../../İndex.html">
+                <img src="../../assets/Gemini_Generated_Image_-Photoroom.png" alt="NetMatik Logo" class="netmatik-logo" style="height: 50px; vertical-align: middle;">
+            </a>
+        </div>
+        <nav class="nav-links">
+            <a href="../../İndex.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <a href="index.html"><i class="fa-solid fa-list-check"></i> Matematik Konuları</a>
+            <a href="../../lgspuan.html"><i class="fa-solid fa-calculator"></i> LGS Net Hesapla</a>
+        </nav>
+    </header>
+
+    <!-- Ana Konteyner -->
+    <main class="container">
+        
+        <!-- Üst Başlık & Geri Dön Butonu -->
+        <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <span style="color: var(--primary-color, #38bdf8); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">
+                    <i class="fa-solid fa-square-root-variable"></i> 8. Sınıf Matematik - 6. Ünite
+                </span>
+                <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-color, #f8fafc); margin-top: 5px;">
+                    Geometrik Cisimler (Prizma, Silindir, Piramit, Koni)
+                </h1>
+            </div>
+            <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i> Konu Listesine Dön
+            </a>
+        </div>
+
+        <!-- ÜST DOKÜMAN / PDF BİLGİ KARTI -->
+        <div class="ders-kart" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 41, 59, 0.8)); border: 1px solid rgba(56, 189, 248, 0.3);">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="kart-icon" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; font-size: 1.8rem;">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 3px;">Geometrik Cisimler PDF Özet</h3>
+                        <p style="margin-bottom: 0;">Silindir yanal alan, hacim ve koni ana doğru formülleri tek dosyada!</p>
+                    </div>
+                </div>
+                <a href="../../ozetler/matematik/geometrik-cisimler.pdf" target="_blank" style="background: #38bdf8; color: #0f172a; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
+                    <i class="fa-solid fa-download"></i> PDF İncele / İndir
+                </a>
+            </div>
+        </div>
+
+        <!-- BÖLÜM 1: DİK PRİZMALAR -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: var(--primary-color, #38bdf8); font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                1. Dik Prizmalar ve Özellikleri
+            </h2>
+            
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Alt ve üst tabanları birbirine paralel ve eş çokgenlerden oluşan, yan yüzleri ise dikdörtgen olan üç boyutlu cisimlere <strong>dik prizma</strong> denir. Prizmalar <strong>tabanındaki çokgenin şekline göre</strong> adlandırılır (Üçgen prizma, Kare prizma, Dikdörtgenler prizması, Altıgen prizma vb.).
+            </p>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 15px; border-radius: 12px; margin-bottom: 1.5rem;">
+                <h4 style="color: #38bdf8; margin-bottom: 10px;"><i class="fa-solid fa-cube"></i> n-gen Tabanlı Dik Prizmanın Temel Eleman Formülleri</h4>
+                <ul style="margin-left: 20px; font-size: 0.95rem; line-height: 1.9; color: #cbd5e1;">
+                    <li><strong>Köşe Sayısı:</strong> <code>2n</code> (Örn: Üçgen prizmada 2·3 = 6 köşe)</li>
+                    <li><strong>Yüz (Yüzey) Sayısı:</strong> <code>n + 2</code> (2 taban + n tane yan yüz)</li>
+                    <li><strong>Ayrıt (Kenar) Sayısı:</strong> <code>3n</code> (3·3 = 9 ayrıt)</li>
+                    <li><strong>Yanal Alan:</strong> <code>(Taban Çevresi) · h</code></li>
+                    <li><strong>Hacim Formülü:</strong> <code>Hacim = (Taban Alanı) · h</code></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 2: DİK DİK SİLİNDİR VE AÇINIMI -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #a855f7; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                2. Dik Dairesel Silindir (Açınım, Yüzey Alanı ve Hacim)
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Alt ve üst tabanları eş daireler olan cisimlere <strong>dik dairesel silindir</strong> denir. Silindir açıldığında yan yüzü bir <strong>dikdörtgen</strong>, alt ve üst yüzleri ise 2 adet eş **dairedir**.
+            </p>
+
+            <!-- LGS Altın Kuralı: Yan Yüz Kenarı -->
+            <div style="background: rgba(168, 85, 247, 0.1); border-left: 4px solid #a855f7; padding: 15px; border-radius: 8px; color: #f8fafc; margin-bottom: 1.5rem;">
+                <h3 style="color: #a855f7; font-size: 1.15rem; margin-bottom: 8px;"><i class="fa-solid fa-key"></i> LGS Kritik Kuralı: Yan Yüz Dikdörtgeninin Taban Kenarı</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                    Silindirin yan yüzünü oluşturan dikdörtgenin yatay kenar uzunluğu, tabandaki dairenin <strong>ÇEVRESİNE ($2\pi r$)</strong> eşittir!
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px;">
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-border-all"></i> Silindirin Yüzey Alanı Formülleri</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7;">
+                        • <strong>Taban Alanı:</strong> <code>π · r²</code> (2 tane olduğu için <code>2πr²</code>)<br>
+                        • <strong>Yanal Alan:</strong> <code>2 · π · r · h</code><br>
+                        • <strong>Toplam Yüzey Alanı:</strong> <code>2πrh + 2πr² = 2πr(h + r)</code>
+                    </p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; border: 1px solid var(--border-color, rgba(255,255,255,0.1));">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-glass-water"></i> Silindirin Hacim Formülü</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7;">
+                        Silindirin hacmi taban alanı ile yüksekliğin çarpımına eşittir:<br>
+                        <strong style="color: #22c55e; font-size: 1.1rem;"><code>Hacim = π · r² · h</code></strong><br>
+                        <em>(Örn: r=3 cm, h=10 cm, π=3 ➔ Hacim = 3 · 3² · 10 = 270 cm³)</em>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 3: DİK PİRAMİT -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                3. Dik Piramitler ve Açınımı
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Tabanı herhangi bir çokgen olan ve yan yüzleri tepedeki tek bir noktada birleşen üçgenlerden oluşan cisimlere <strong>piramit</strong> denir.
+            </p>
+
+            <div style="background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); padding: 15px; border-radius: 12px;">
+                <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-pyramid"></i> n-gen Tabanlı Piramidin Eleman Sayıları</h4>
+                <ul style="margin-left: 20px; font-size: 0.9rem; line-height: 1.8; color: #cbd5e1;">
+                    <li><strong>Köşe Sayısı:</strong> <code>n + 1</code> (Tabandaki n köşe + Tepe noktası)</li>
+                    <li><strong>Yüz Sayısı:</strong> <code>n + 1</code> (1 taban + n tane üçgen yan yüz)</li>
+                    <li><strong>Ayrıt Sayısı:</strong> <code>2n</code></li>
+                    <li>Tepe noktasından tabana inen dikme piramidin <strong>yüksekliğidir (h)</strong>.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 4: DİK KONİ VE ANA DOĞRU FORMÜLÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #f59e0b; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                4. Dik Koni, Ana Doğru ($a$) ve Açı Oran Formülü
+            </h2>
+
+            <p style="line-height: 1.8; margin-bottom: 1rem;">
+                Tabanı daire olan ve tepe noktası ile taban dairesinin çevresi birleşerek oluşan geometrik cisme <strong>dik koni</strong> denir. Tepe noktasını taban çemberine birleştiren doğru parçasına <strong>ana doğru ($a$)</strong> denir.
+            </p>
+
+            <!-- Pisagor ve Daire Dilim Açı Bağlantısı -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin-bottom: 1rem;">
+                <div style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 15px; border-radius: 10px;">
+                    <h4 style="color: #f59e0b; margin-bottom: 8px;"><i class="fa-solid fa-triangle-exclamation"></i> 1) Konide Pisagor Bağıntısı</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                        Yükseklik ($h$), yarıçap ($r$) ve ana doğru ($a$) arasında dik üçgen oluşur:<br>
+                        <strong style="color: #f59e0b; font-size: 1.1rem;"><code>h² + r² = a²</code></strong>
+                    </p>
+                </div>
+
+                <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 15px; border-radius: 10px;">
+                    <h4 style="color: #38bdf8; margin-bottom: 8px;"><i class="fa-solid fa-chart-pie"></i> 2) LGS Koni Açı Formülü</h4>
+                    <p style="font-size: 0.95rem; line-height: 1.7; color: #cbd5e1;">
+                        Koninin yan yüzü açıldığında bir daire dilimi oluşur ($\alpha$ merkez açısı):<br>
+                        <strong style="color: #38bdf8; font-size: 1.1rem;"><code>r / a = α / 360°</code></strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- BÖLÜM 5: LGS YENİ NESİL ÖRNEK SORU ÇÖZÜMÜ -->
+        <article class="ders-kart" style="margin-bottom: 2rem; cursor: default;">
+            <h2 style="color: #22c55e; font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding-bottom: 8px;">
+                5. LGS Tarzı Yeni Nesil Silindir Hacim & Su Deposu Soru Çözümü
+            </h2>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color, rgba(255,255,255,0.1)); padding: 20px; border-radius: 12px;">
+                <p style="font-weight: 600; font-size: 1rem; color: #f8fafc; margin-bottom: 12px;">
+                    <strong>Soru:</strong> Taban yarıçapı <code>r = 4 cm</code> ve yüksekliği <code>h = 15 cm</code> olan dik dairesel silindir biçimindeki bir su kabının <code>1/3</code>'ü su ile doludur. Bu kabın tamamen dolması için kaç cm³ daha suya ihtiyaç vardır? ($\pi = 3$ alınız).
+                </p>
+
+                <div style="background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 8px; border-left: 4px solid #22c55e; margin-top: 15px;">
+                    <h4 style="color: #22c55e; margin-bottom: 8px;"><i class="fa-solid fa-check-double"></i> Adım Adım Çözüm:</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.7; color: #cbd5e1;">
+                        1. **Silindirin Toplam Hacmini Bulalım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>Hacim = π · r² · h</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>Hacim = 3 · (4)² · 15 = 3 · 16 · 15 = 720 cm³</code>.<br>
+                        2. **Boş Olan Hacim Oranını Bulalım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Kabın <code>1/3</code>'ü dolu ise, dolması için gereken miktar <code>2/3</code>'sidir.<br>
+                        3. **Gerekli Su Miktarını Hesaplayalım:**<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<code>Eksik Su = 720 · (2 / 3) = 240 · 2</code><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="color: #38bdf8;">Sonuç: <code>480 cm³</code> suya ihtiyaç vardır.</strong>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer style="display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 3rem;">
+        <p>İletişim & Destek: <a href="mailto:bartuemre20122012@gmail.com" style="color: #38bdf8; text-decoration: none; font-weight: 600;">bartuemre20122012@gmail.com</a></p>
+        <p>&copy; 2026 NetMatik. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
